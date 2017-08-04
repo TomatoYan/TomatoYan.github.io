@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="泛泛而谈">
 <meta property="og:description" content="Nginx的简介Nginx 是一个很强大的高性能Web和反向代理服务器。 Nginx优点 作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。 Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-04T10:53:42.707Z">
+<meta property="og:updated_time" content="2017-08-04T10:56:45.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx负载均衡的搭建">
 <meta name="twitter:description" content="Nginx的简介Nginx 是一个很强大的高性能Web和反向代理服务器。 Nginx优点 作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。 Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到">
@@ -188,9 +188,9 @@
 <li>作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。</li>
 <li>Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到7*24不间断运行，即使运行数个月也不需要重新启动. 你还能够不间断服务的情况下进行软件版本的升级 . Nginx 静态处理性能比 Apache 高 3倍以上 ，Apache 对 PHP 支持比较简单，Nginx 需要配合其他后端来使用 ,Apache 的组件比 Nginx 多. </li>
 <li>最核心的区别在于apache是同步多进程模型，一个连接对应一个进程；Nginx是异步的，多个连接（万级别）可以对应一个进程 .</li>
-<li>Nginx的优势是处理静态请求，cpu内存使用率低，apache适合处理动态请求，所以现在一般前端用Nginx作为反向代理抗住压力，apache作为后端处理动态请求。<a id="more"></a>
-</li>
+<li>Nginx的优势是处理静态请求，cpu内存使用率低，apache适合处理动态请求，所以现在一般前端用Nginx作为反向代理抗住压力，apache作为后端处理动态请求。</li>
 </ol>
+<a id="more"></a>
 <h2 id="Nginx-工作原理"><a href="#Nginx-工作原理" class="headerlink" title="Nginx 工作原理"></a>Nginx 工作原理</h2><p>Nginx会按需同时运行多个进程：一个主进程(master)和几个工作进程(worker)，配置了缓存时还会有缓存加载器进程(cache loader)和缓存管理器进程(cache manager)等。所有进程均是仅含有一个线程，并主要通过“共享内存”的机制实现进程间通信。主进程以root用户身份运行，而worker、 cache loader和cache manager均应以非特权用户身份运行。</p>
 <h2 id="Nginx的使用"><a href="#Nginx的使用" class="headerlink" title="Nginx的使用"></a>Nginx的使用</h2><p>目标：利用Nginx服务器反向代理对Tomcat进行负载均衡<br>需要的工具：Nginx、Tomcat<br>负载均衡：</p>
 <h3 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h3><ol>
