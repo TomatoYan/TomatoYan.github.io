@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>泛泛而谈</title>
+  <subtitle>大抵浮生若梦，姑且此处销魂。</subtitle>
+  <link href="/love/atom.xml" rel="self"/>
+  
+  <link href="http%EF%BC%9A//tomato_peach.coding.me/love/"/>
+  <updated>2017-08-04T11:58:49.599Z</updated>
+  <id>http：//tomato_peach.coding.me/love/</id>
+  
+  <author>
+    <name>Tomato Yan</name>
+    <email>632068499@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>澜澜的天上白云飘</title>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/04/%E6%BE%9C%E6%BE%9C%E7%9A%84%E5%A4%A9%E4%B8%8A%E7%99%BD%E4%BA%91%E9%A3%98/"/>
+    <id>http：//tomato_peach.coding.me/love/2017/08/04/澜澜的天上白云飘/</id>
+    <published>2017-08-04T11:03:44.000Z</published>
+    <updated>2017-08-04T11:58:49.599Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="啦啦啦"><a href="#啦啦啦" class="headerlink" title="啦啦啦"></a>啦啦啦</h1><pre><code>你好呀！
+</code></pre><p>换行啦<br><br>换行啦<br><br>换行啦<br><br>换行啦<br></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;啦啦啦&quot;&gt;&lt;a href=&quot;#啦啦啦&quot; class=&quot;headerlink&quot; title=&quot;啦啦啦&quot;&gt;&lt;/a&gt;啦啦啦&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;你好呀！
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;换行啦&lt;br&gt;&lt;br&gt;换行啦&lt;br&gt;&lt;br&gt;换行啦&lt;br&gt;&lt;br&gt;换行啦&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最近生活</title>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/04/%E6%9C%80%E8%BF%91%E7%94%9F%E6%B4%BB/"/>
+    <id>http：//tomato_peach.coding.me/love/2017/08/04/最近生活/</id>
+    <published>2017-08-04T10:22:48.000Z</published>
+    <updated>2017-08-04T11:05:59.380Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><p><code>你好呀！</code></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;Test&quot;&gt;&lt;/a&gt;Test&lt;/h1&gt;&lt;p&gt;&lt;code&gt;你好呀！&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx负载均衡的搭建</title>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+    <id>http：//tomato_peach.coding.me/love/2017/08/02/Nginx负载均衡的搭建/</id>
+    <published>2017-08-02T02:56:18.000Z</published>
+    <updated>2017-08-04T10:56:45.992Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Nginx的简介"><a href="#Nginx的简介" class="headerlink" title="Nginx的简介"></a>Nginx的简介</h2><p>Nginx 是一个很强大的高性能Web和反向代理服务器。</p>
+<h2 id="Nginx优点"><a href="#Nginx优点" class="headerlink" title="Nginx优点"></a>Nginx优点</h2><ol>
+<li>作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。</li>
+<li>Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到7*24不间断运行，即使运行数个月也不需要重新启动. 你还能够不间断服务的情况下进行软件版本的升级 . Nginx 静态处理性能比 Apache 高 3倍以上 ，Apache 对 PHP 支持比较简单，Nginx 需要配合其他后端来使用 ,Apache 的组件比 Nginx 多. </li>
+<li>最核心的区别在于apache是同步多进程模型，一个连接对应一个进程；Nginx是异步的，多个连接（万级别）可以对应一个进程 .</li>
+<li>Nginx的优势是处理静态请求，cpu内存使用率低，apache适合处理动态请求，所以现在一般前端用Nginx作为反向代理抗住压力，apache作为后端处理动态请求。</li>
+</ol>
+<a id="more"></a>
+<h2 id="Nginx-工作原理"><a href="#Nginx-工作原理" class="headerlink" title="Nginx 工作原理"></a>Nginx 工作原理</h2><p>Nginx会按需同时运行多个进程：一个主进程(master)和几个工作进程(worker)，配置了缓存时还会有缓存加载器进程(cache loader)和缓存管理器进程(cache manager)等。所有进程均是仅含有一个线程，并主要通过“共享内存”的机制实现进程间通信。主进程以root用户身份运行，而worker、 cache loader和cache manager均应以非特权用户身份运行。</p>
+<h2 id="Nginx的使用"><a href="#Nginx的使用" class="headerlink" title="Nginx的使用"></a>Nginx的使用</h2><p>目标：利用Nginx服务器反向代理对Tomcat进行负载均衡<br>需要的工具：Nginx、Tomcat<br>负载均衡：</p>
+<h3 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h3><ol>
+<li>首先下载 Nginx (<a href="http://nginx.org/en/download.html)在Linux上解压" target="_blank" rel="external">http://nginx.org/en/download.html)在Linux上解压</a> tar zxvf nginx-0.x.xx.tar.gz<br>进入解压目录：cd nginx-0.x.xx<br>./configure<br>make<br>sudo make install</li>
+<li>Windows只需要解压即可完成安装</li>
+</ol>
+<h3 id="Nginx的启动"><a href="#Nginx的启动" class="headerlink" title="Nginx的启动"></a>Nginx的启动</h3><p>以上安装 nginx默认解压在 usr/local/nginx目录下。<br>所以启动的时候：usr/local/nginx/sbin/nginx -c  /usr/local/nginx/conf/nginx.conf<br>-c在这里是指定配置文件的路径，如果不指定，那么就是默认的<br>/usr/local/nginx/conf/nginx.conf<br>启动后我们可以通过 ps -ef | grep nginx 来查找Nginx的主进程号<br>master process代表住进程</p>
+<p>Windows下直接点击解压包中的nginx.exe </p>
+<h3 id="Nginx的停止"><a href="#Nginx的停止" class="headerlink" title="Nginx的停止"></a>Nginx的停止</h3><p>1) 从容停止Nginx<br>kill - QUIT <nginx 主进程号=""><br>或 kill - QUIT ‘/usr/local/nginx/logs/nginx.pid’<br>2) 快速停止Nginx<br>kill - TEAM <nginx 主进程号=""><br>kill - TEAM Nginx ‘/usr/local/nginx/logs/nginx.pid’<br>或<br>kill - INT <nginx 主进程号=""><br>kill - INT ‘/usr/local/nginx/logs/nginx.pid’<br>3) 强制停止所有Nginx进程<br>pkill -9 nginx<br>4) Nginx的平滑重启(因为是从容地重启，因此服务是不中断的)<br>kill - HUP <nginx 主进程号=""><br>kill - HUP ‘/usr/local/nginx/logs/nginx.pid’</nginx></nginx></nginx></nginx></p>
+<p>Windows下退出直接在任务管理器停止进程即可</p>
+<h2 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h2><p>由于Nginx做两个tomcat的反向代理和负载均衡，所以需要修改两个Tomcat的配置，只需要将两个Tomcat的端口号修改为指定端口号。<br>此处有三处需要修改端口号(修改文件为：apache-tomcat-XXX/conf/server.xml)：</p>
+<pre><code>&lt;?xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos;?&gt;
+&lt;Server port=&quot;18005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;
+  &lt;Listener className=&quot;org.apache.catalina.startup.VersionLoggerListener&quot; /&gt;
+  &lt;Listener className=&quot;org.apache.catalina.core.AprLifecycleListener&quot; SSLEngine=&quot;on&quot; /&gt;
+  &lt;Listener className=&quot;org.apache.catalina.core.JreMemoryLeakPreventionListener&quot; /&gt;
+  &lt;Listener className=&quot;org.apache.catalina.mbeans.GlobalResourcesLifecycleListener&quot; /&gt;
+  &lt;Listener className=&quot;org.apache.catalina.core.ThreadLocalLeakPreventionListener&quot; /&gt;
+  &lt;GlobalNamingResources&gt;
+    &lt;Resource name=&quot;UserDatabase&quot; auth=&quot;Container&quot;
+              type=&quot;org.apache.catalina.UserDatabase&quot;
+              description=&quot;User database that can be updated and saved&quot;
+              factory=&quot;org.apache.catalina.users.MemoryUserDatabaseFactory&quot;
+              pathname=&quot;conf/tomcat-users.xml&quot; /&gt;
+  &lt;/GlobalNamingResources&gt;
+  &lt;Service name=&quot;Catalina&quot;&gt;
+    &lt;Connector port=&quot;18080&quot; protocol=&quot;HTTP/1.1&quot;
+               connectionTimeout=&quot;20000&quot;
+               redirectPort=&quot;8443&quot; /&gt;
+    &lt;Connector port=&quot;18009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;
+    &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;
+      &lt;Realm className=&quot;org.apache.catalina.realm.LockOutRealm&quot;&gt;
+       &lt;Realm className=&quot;org.apache.catalina.realm.UserDatabaseRealm&quot;resourceName=&quot;UserDatabase&quot;/&gt;
+      &lt;/Realm&gt;
+      &lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot;
+            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;
+        &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot;
+               prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot;
+               pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
+      &lt;/Host&gt;
+    &lt;/Engine&gt;
+  &lt;/Service&gt;
+&lt;/Server&gt;
+</code></pre><p>一共三处 另一个tomcat改为 28005、28080、28009即可<br>配置Nginx<br>注：配置文件是nginx.conf文件</p>
+<pre><code>worker_processes  2;#工作进程的个数，一般与计算机的cpu核数一致，或者是双倍
+events {
+    worker_connections  1024;#单个进程最大连接数（最大连接数=连接数*进程数）
+}
+http {
+    include       mime.types; #文件扩展名与文件类型映射表
+    default_type  application/octet-stream;#默认文件类型
+    sendfile        on;#开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。注意：如果图片显示不正常把这个改成off。
+    keepalive_timeout  65; #长连接超时时间，单位是秒
+    gzip  on;#启用Gizp压缩
+    #服务器的集群
+    upstream  netitcast.com {  #服务器集群名字  此处是两个tomcat
+        server    127.0.0.1:18080  weight=1;#服务器配置   weight是权重的意思，权重越大，分配的概率越大。
+        server    127.0.0.1:28080  weight=2;
+    }    
+    #当前的Nginx的配置
+    server {
+        listen  80;#监听80端口，可以改成其他端口
+        server_name  localhost;##############    当前服务的域名
+    location / {
+            proxy_pass http://netitcast.com;
+            proxy_redirect default;
+        }
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+}
+</code></pre><h2 id="关闭日志操作-可选"><a href="#关闭日志操作-可选" class="headerlink" title="关闭日志操作(可选)"></a>关闭日志操作(可选)</h2><p>由于我们的服务需要在服务器上长久运行，日志文件的产生会导致服务器硬盘空间的不足，并且会对系统稳定性造成一定影响，所以我们可以选择关掉日志文件。</p>
+<h3 id="Tomcat日志关闭"><a href="#Tomcat日志关闭" class="headerlink" title="Tomcat日志关闭"></a>Tomcat日志关闭</h3><p>将server.xml下的</p>
+<pre><code>&lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot;
+           prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot;
+           pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
+</code></pre><p>注释掉即可。</p>
+<h3 id="Nginx日志关闭"><a href="#Nginx日志关闭" class="headerlink" title="Nginx日志关闭"></a>Nginx日志关闭</h3><p>开发环境我默认不写日志，即不配置任何access_log<br>Nginx的http段中，设置access log：access_log off;<br>其他日志可以百度查找相关方法</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Nginx的简介&quot;&gt;&lt;a href=&quot;#Nginx的简介&quot; class=&quot;headerlink&quot; title=&quot;Nginx的简介&quot;&gt;&lt;/a&gt;Nginx的简介&lt;/h2&gt;&lt;p&gt;Nginx 是一个很强大的高性能Web和反向代理服务器。&lt;/p&gt;
+&lt;h2 id=&quot;Nginx优点&quot;&gt;&lt;a href=&quot;#Nginx优点&quot; class=&quot;headerlink&quot; title=&quot;Nginx优点&quot;&gt;&lt;/a&gt;Nginx优点&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。&lt;/li&gt;
+&lt;li&gt;Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到7*24不间断运行，即使运行数个月也不需要重新启动. 你还能够不间断服务的情况下进行软件版本的升级 . Nginx 静态处理性能比 Apache 高 3倍以上 ，Apache 对 PHP 支持比较简单，Nginx 需要配合其他后端来使用 ,Apache 的组件比 Nginx 多. &lt;/li&gt;
+&lt;li&gt;最核心的区别在于apache是同步多进程模型，一个连接对应一个进程；Nginx是异步的，多个连接（万级别）可以对应一个进程 .&lt;/li&gt;
+&lt;li&gt;Nginx的优势是处理静态请求，cpu内存使用率低，apache适合处理动态请求，所以现在一般前端用Nginx作为反向代理抗住压力，apache作为后端处理动态请求。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="Nginx" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/01/hello-world/"/>
+    <id>http：//tomato_peach.coding.me/love/2017/08/01/hello-world/</id>
+    <published>2017-08-01T06:02:18.000Z</published>
+    <updated>2017-08-04T10:55:44.921Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<a id="more"></a>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
