@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>泛泛而谈</title>
   <subtitle>大抵浮生若梦，姑且此处销魂。</subtitle>
-  <link href="/love/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http%EF%BC%9A//tomato_peach.coding.me/love/"/>
+  <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
   <updated>2017-08-07T07:47:57.324Z</updated>
-  <id>http：//tomato_peach.coding.me/love/</id>
+  <id>http：//tomato_peach.coding.me/</id>
   
   <author>
     <name>Tomato Yan</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Docker教程</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
-    <id>http：//tomato_peach.coding.me/love/2017/08/07/Docker教程/</id>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/07/Docker教程/</id>
     <published>2017-08-07T07:45:12.000Z</published>
     <updated>2017-08-07T07:47:57.324Z</updated>
     
@@ -31,8 +31,8 @@
   
   <entry>
     <title>配置最小oracle实例单元</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/07/%E9%85%8D%E7%BD%AE%E6%9C%80%E5%B0%8Foracle%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%85%83/"/>
-    <id>http：//tomato_peach.coding.me/love/2017/08/07/配置最小oracle实例单元/</id>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/07/%E9%85%8D%E7%BD%AE%E6%9C%80%E5%B0%8Foracle%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%85%83/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/07/配置最小oracle实例单元/</id>
     <published>2017-08-07T07:12:56.000Z</published>
     <updated>2017-08-07T07:34:06.136Z</updated>
     
@@ -68,14 +68,14 @@
     </summary>
     
     
-      <category term="数据库" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>澜澜的天上白云飘</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/04/%E6%BE%9C%E6%BE%9C%E7%9A%84%E5%A4%A9%E4%B8%8A%E7%99%BD%E4%BA%91%E9%A3%98/"/>
-    <id>http：//tomato_peach.coding.me/love/2017/08/04/澜澜的天上白云飘/</id>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/04/%E6%BE%9C%E6%BE%9C%E7%9A%84%E5%A4%A9%E4%B8%8A%E7%99%BD%E4%BA%91%E9%A3%98/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/04/澜澜的天上白云飘/</id>
     <published>2017-08-04T11:03:44.000Z</published>
     <updated>2017-08-04T11:58:49.599Z</updated>
     
@@ -92,14 +92,14 @@
     </summary>
     
     
-      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>最近生活</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/04/%E6%9C%80%E8%BF%91%E7%94%9F%E6%B4%BB/"/>
-    <id>http：//tomato_peach.coding.me/love/2017/08/04/最近生活/</id>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/04/%E6%9C%80%E8%BF%91%E7%94%9F%E6%B4%BB/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/04/最近生活/</id>
     <published>2017-08-04T10:22:48.000Z</published>
     <updated>2017-08-04T11:05:59.380Z</updated>
     
@@ -114,14 +114,14 @@
     </summary>
     
     
-      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>Nginx负载均衡的搭建</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
-    <id>http：//tomato_peach.coding.me/love/2017/08/02/Nginx负载均衡的搭建/</id>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/02/Nginx负载均衡的搭建/</id>
     <published>2017-08-02T02:56:18.000Z</published>
     <updated>2017-08-04T10:56:45.992Z</updated>
     
@@ -228,14 +228,14 @@ http {
     </summary>
     
     
-      <category term="Nginx" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/Nginx/"/>
+      <category term="Nginx" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/love/2017/08/01/hello-world/"/>
-    <id>http：//tomato_peach.coding.me/love/2017/08/01/hello-world/</id>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/01/hello-world/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/01/hello-world/</id>
     <published>2017-08-01T06:02:18.000Z</published>
     <updated>2017-08-04T10:55:44.921Z</updated>
     
@@ -260,7 +260,7 @@ http {
     </summary>
     
     
-      <category term="hexo" scheme="http%EF%BC%9A//tomato_peach.coding.me/love/tags/hexo/"/>
+      <category term="hexo" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/hexo/"/>
     
   </entry>
   
