@@ -184,28 +184,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Oracle开发的关系数据库产品因性能卓越而闻名，许多大型网站也选用了Oracle系统，是世界最好的数据库产品。但Oracle数据库管理软件却十分庞大，在本地安装总会开启一堆服务，同时占用大量的磁盘空间和内存。Oracle提供了Oracle SQL Developer这样的管理工具(下载地址: <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)，我们可以使用这个工具对本地和远程的Oracle数据库进行管理，SQL" target="_blank" rel="external">http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)，我们可以使用这个工具对本地和远程的Oracle数据库进行管理，SQL</a> Developer是Oracle公司出品的一个免费非开源的用以开发数据库应用程序的图形化工具，使用 SQL Developer 可以浏览数据库对象、运行 SQL 语句和脚本、编辑和调试 PL/SQL 语句，但SQL Developer 需要的开发环境要去会比较高(JDK &gt;1.8)，同时，只可以连接到任何Oracle 10g及其后续版本的数据库，此外SQL Developer市场占有率并不高，市场份额基本都被PL/SQL Developer所占有。而PL/SQL Developer 的使用需要有Oracle的一些支持(SQL Developer不需要)，所以我们需要配置最小Oracle实例单元。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h3><p>1.需要在Oracle官网下载简易的oracle数据库客户端(instantclient-basiclite-nt-11.20.0.4.0)，大小仅仅10多M。下载instantclient-basic-win32-11.2.0.1.0（oracle官网下载地址<br><a href="http://www.oracle.com/technetwork/topics/winsoft-085727.html" target="_blank" rel="external">http://www.oracle.com/technetwork/topics/winsoft-085727.html</a> )</p>
-<p>2.下载PL/SQL客户端(官网(<a href="https://www.allroundautomations.com/bodyplsqldevreg.html)试用，也可以下载破解版" target="_blank" rel="external">https://www.allroundautomations.com/bodyplsqldevreg.html)试用，也可以下载破解版</a>)</p>
-<h2 id="配置Oracle监听"><a href="#配置Oracle监听" class="headerlink" title="配置Oracle监听"></a>配置Oracle监听</h2><p>解压instantclient-basiclite-nt-11.20.0.4.0 在其文件夹中新建 network 文件夹，新建 admin 文件夹，这个类似oracle数据库的network -&gt; admin，在文件夹中新建 tnsnames.ora 或者从有数据库客户端的地方拷贝。</p>
-<pre><code>TEST =
-  (DESCRIPTION =
-    (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = xxx.xxx.xxx.xxx)(PORT = 1521))
-    )
-    (CONNECT_DATA =
-      (SID = test)
-    )
-  )
-</code></pre><p>也可以直接从oracle客户端里面找到tnsnames.ora文件，直接copy到ADMIN文件下。</p>
-<h2 id="设置PL-SQL-Developer"><a href="#设置PL-SQL-Developer" class="headerlink" title="设置PL/SQL Developer"></a>设置PL/SQL Developer</h2><p>打开PLSQL Developer，选择Tools -&gt; perference -&gt; Connection，配置其中的Oracle Home和OCI Library项，如下图所示：</p>
-<p><img src="http://img.blog.csdn.net/20170807152412594?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="PL/SQL developer"></p>
-<pre><code>其中, Oracle Home：E:\app\Administrator\product\instantclient_11_2
-     OCI Library：E:\app\Administrator\product\instantclient_11_2\oci.dll
-</code></pre><h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><p>右击”我的电脑” - “属性” - “高级” - “环境变量” - “系统环境变量”:</p>
-<pre><code>1&gt;.选择&quot;Path&quot; - 点击&quot;编辑&quot;, 把 &quot;E:\app\Administrator\product\instantclient_11_2;&quot; 加入;
-2&gt;.点击&quot;新建&quot;, 变量名设置为&quot;TNS_ADMIN&quot;, 变量值设置为&quot;E:\app\Administrator\product\instantclient_11_2;&quot;, 点击&quot;确定&quot;;
-3&gt;.点击&quot;新建&quot;, 变量名设置为&quot;NLS_LANG&quot;, 变量值设置为&quot;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&quot;, 点击&quot;确定&quot;;字符编码变量配置，防止有乱码
-</code></pre>
+        
+          <a class="article-more-a" href="/love/2017/08/07/配置最小oracle实例单元/#more">more >></a>
+        
       
 
       
