@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-07T07:47:57.324Z</updated>
+  <updated>2017-08-09T10:42:17.507Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jvisualvm远程监控Tomcat</title>
+    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/09/jvisualvm%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7Tomcat/"/>
+    <id>http：//tomato_peach.coding.me/2017/08/09/jvisualvm远程监控Tomcat/</id>
+    <published>2017-08-09T10:02:17.000Z</published>
+    <updated>2017-08-09T10:42:17.507Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="VisualVM：多合一故障处理工具"><a href="#VisualVM：多合一故障处理工具" class="headerlink" title="VisualVM：多合一故障处理工具"></a>VisualVM：多合一故障处理工具</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VisualVM(All-in-One Java Trouble Tool)是到目前为止随JDK发布功能最强大的运行监视和故障处理程序。而且VisualVM不需要被监视的程序基于特殊Agent运行，因此它对实际性能的影响很小，使得它可以直接应用在生产环境中。<br>界面如下：<br><img src="http://img.blog.csdn.net/20170809183644088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="界面1"><br><img src="http://img.blog.csdn.net/20170809183710495?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="界面2"></p>
+<h2 id="VisualVM的功能"><a href="#VisualVM的功能" class="headerlink" title="VisualVM的功能"></a>VisualVM的功能</h2><p>VisualVM可以做到：</p>
+<ul>
+<li>显示虚拟机进程以及进程的配置、环境信息(jsp、jinfo)。</li>
+<li>监视应用程序的CPU、GC、堆、方法区以及线程的信息(jstat、jstack)。</li>
+<li>dump以及分析堆转储快照(jmap、jhat)。</li>
+<li>方法级的程序运行性能分析，找出被调用最多、运行时间最长的方法。</li>
+<li>离线程序快照：收集程序的运行时配置、线程dump、内存dump等信息建立一个快照，可以将快照发送开发者处进行Bug反馈。</li>
+</ul>
+<h2 id="VisualVM安装插件"><a href="#VisualVM安装插件" class="headerlink" title="VisualVM安装插件"></a>VisualVM安装插件</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于墙的原因，所以需要采取些措施，才能顺利的下载安装插件。<br><img src="http://img.blog.csdn.net/20170809183752146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="插件"></p>
+<h2 id="jvisualvm远程监控Tomcat"><a href="#jvisualvm远程监控Tomcat" class="headerlink" title="jvisualvm远程监控Tomcat"></a>jvisualvm远程监控Tomcat</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入我们的正题，利用jvisualvm远程监控Tomcat服务器。这里的Tomcat部署在远程Linux服务器上。</p>
+<h3 id="1-修改Tomcat下bin目录下的startup-sh"><a href="#1-修改Tomcat下bin目录下的startup-sh" class="headerlink" title="1.修改Tomcat下bin目录下的startup.sh"></a>1.修改Tomcat下bin目录下的startup.sh</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在startup.sh倒数第二行，也就是exec “$PRGDIR”/“$EXECUTABLE” start “$@”上一行添加如下内容：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>export CATALINA_OPTS=&quot;$CATALINA_OPTS
+-Dcom.sun.management.jmxremote
+-Djava.rmi.server.hostname=192.168.1.130
+-Dcom.sun.management.jmxremote.port=8888
+-Dcom.sun.management.jmxremote.ssl=false
+-Dcom.sun.management.jmxremote.authenticate=true
+-Dcom.sun.management.jmxremote.password.file=../conf/jmxremote.password
+-Dcom.sun.management.jmxremote.access.file=../conf/jmxremote.access&quot;</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各个参数的说明如下：</p>
+<pre><code>-Dcom.sun.management.jmxremote   #启用JMX远程监控
+-Djava.rmi.server.hostname=192.168.1.130  #Tomcat服务器地址
+-Dcom.sun.management.jmxremote.port=8888  #jmx连接端口
+-Dcom.sun.management.jmxremote.ssl=false   #是否ssl加密
+-Dcom.sun.management.jmxremote.authenticate=false   #远程连接不需要密码认证
+-Dcom.sun.management.jmxremote.password.file=../conf/jmxremote.password   #指定连接的用户名和密码配置文件
+-Dcom.sun.management.jmxremote.access.file=../conf/jmxremote.access   #指定连接的用户所拥有权限的配置文件
+</code></pre><h3 id="2-修改服务器上Tomcat的配置："><a href="#2-修改服务器上Tomcat的配置：" class="headerlink" title="2.修改服务器上Tomcat的配置："></a>2.修改服务器上Tomcat的配置：</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先需要修改两个配置文件，首先进入 JAVA_HOME\jre\lib\management 目录下，拷贝和修改jmxremote.password.template为jmxremote.password，操作为：<br>取消最后两行代码的注释，</p>
+<pre><code>\# monitorRole  QED   ---&gt;   monitorRole  QED
+\# controlRole   R&amp;D   ---&gt;   controlRole   R&amp;D
+</code></pre><p>拷贝和修改文件jmxremote.access，操作为：</p>
+<pre><code>monitorRole   readonly
+controlRole   readwrite
+</code></pre><h3 id="3-将文件拷贝至服务器上Tomcat下的conf目录下"><a href="#3-将文件拷贝至服务器上Tomcat下的conf目录下" class="headerlink" title="3.将文件拷贝至服务器上Tomcat下的conf目录下"></a>3.将文件拷贝至服务器上Tomcat下的conf目录下</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;即和tomcat的配置文件放在一起</p>
+<h3 id="4-修改两个文件权限"><a href="#4-修改两个文件权限" class="headerlink" title="4.修改两个文件权限"></a>4.修改两个文件权限</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改jmxremote.access和jmxremote.password的权限：sudo chmod 600 jmx*</p>
+<h3 id="5-重新启动Tomcat"><a href="#5-重新启动Tomcat" class="headerlink" title="5.重新启动Tomcat"></a>5.重新启动Tomcat</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以查看log下的日志看是否有错，并解决。</p>
+<h3 id="6-打开jvisualvm"><a href="#6-打开jvisualvm" class="headerlink" title="6.打开jvisualvm"></a>6.打开jvisualvm</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1 添加远程主机 6.2 添加JMX连接 确定连接即可<br><img src="http://img.blog.csdn.net/20170809183806389?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="连接"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;VisualVM：多合一故障处理工具&quot;&gt;&lt;a href=&quot;#VisualVM：多合一故障处理工具&quot; class=&quot;headerlink&quot; title=&quot;VisualVM：多合一故障处理工具&quot;&gt;&lt;/a&gt;VisualVM：多合一故障处理工具&lt;/h2&gt;&lt;p&gt;&amp;nbsp;
+    
+    </summary>
+    
+    
+      <category term="jvm" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/jvm/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker教程</title>
