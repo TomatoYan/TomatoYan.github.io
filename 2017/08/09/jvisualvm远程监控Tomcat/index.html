@@ -18,9 +18,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20170809183644088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170809183710495?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170809183752146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810153927241?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170809183806389?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-08-09T10:51:20.679Z">
+<meta property="og:updated_time" content="2017-08-10T07:47:37.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jvisualvm远程监控Tomcat">
 <meta name="twitter:description" content="VisualVM：多合一故障处理工具&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;VisualVM(All-in-One Java Trouble Tool)是到目前为止随JDK发布功能最强大的运行监视和故障处理程序。而且VisualVM不需要被监视的程序基于特殊Agent运行，因此它对实际性能的影响很小，使得它可以直接应用在生产环境中。界面如下：">
@@ -211,7 +211,7 @@
 <li>方法级的程序运行性能分析，找出被调用最多、运行时间最长的方法。</li>
 <li>离线程序快照：收集程序的运行时配置、线程dump、内存dump等信息建立一个快照，可以将快照发送开发者处进行Bug反馈。</li>
 </ul>
-<h2 id="VisualVM安装插件"><a href="#VisualVM安装插件" class="headerlink" title="VisualVM安装插件"></a>VisualVM安装插件</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于墙的原因，所以需要采取些措施，才能顺利的下载安装插件。<br><img src="http://img.blog.csdn.net/20170809183752146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="插件"></p>
+<h2 id="VisualVM安装插件"><a href="#VisualVM安装插件" class="headerlink" title="VisualVM安装插件"></a>VisualVM安装插件</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于墙的原因，所以需要采取些措施，才能顺利的下载安装插件。<br><img src="http://img.blog.csdn.net/20170810153927241?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="插件"></p>
 <h2 id="jvisualvm远程监控Tomcat"><a href="#jvisualvm远程监控Tomcat" class="headerlink" title="jvisualvm远程监控Tomcat"></a>jvisualvm远程监控Tomcat</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入我们的正题，利用jvisualvm远程监控Tomcat服务器。这里的Tomcat部署在远程Linux服务器上。</p>
 <h3 id="1-修改Tomcat下bin目录下的startup-sh"><a href="#1-修改Tomcat下bin目录下的startup-sh" class="headerlink" title="1.修改Tomcat下bin目录下的startup.sh"></a>1.修改Tomcat下bin目录下的startup.sh</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在startup.sh倒数第二行，也就是exec “$PRGDIR”/“$EXECUTABLE” start “$@”上一行添加如下内容：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>export CATALINA_OPTS=&quot;$CATALINA_OPTS
 -Dcom.sun.management.jmxremote
@@ -239,6 +239,16 @@ controlRole   readwrite
 <h3 id="4-修改两个文件权限"><a href="#4-修改两个文件权限" class="headerlink" title="4.修改两个文件权限"></a>4.修改两个文件权限</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改jmxremote.access和jmxremote.password的权限：sudo chmod 600 jmx*</p>
 <h3 id="5-重新启动Tomcat"><a href="#5-重新启动Tomcat" class="headerlink" title="5.重新启动Tomcat"></a>5.重新启动Tomcat</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以查看log下的日志看是否有错，并解决。</p>
 <h3 id="6-打开jvisualvm"><a href="#6-打开jvisualvm" class="headerlink" title="6.打开jvisualvm"></a>6.打开jvisualvm</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1 添加远程主机 6.2 添加JMX连接 确定连接即可<br><img src="http://img.blog.csdn.net/20170809183806389?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="连接"></p>
+<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><h2 id="监控JVM中运行的Java程序"><a href="#监控JVM中运行的Java程序" class="headerlink" title="监控JVM中运行的Java程序"></a>监控JVM中运行的Java程序</h2><p>前提：远程机器需要有Java环境</p>
+<p>1.在%JAVA_HOME%\bin目录下创建一个文件：jstatd.all.policy（名字可以变，扩展名不可以变），内容如下：</p>
+<pre><code>grant codebase &quot;file:${java.home}/../lib/tools.jar&quot; {
+   permission java.security.AllPermission;
+};
+</code></pre><p>这个文件的作用是让jstatd服务能够读取机器上的java应用程序的运行数据。</p>
+<p>2.在%JAVA_HOME%\bin目录下，执行如下命令：</p>
+<p>jstatd -J-Djava.security.policy=jstatd.all.policy</p>
+<p>3.展开刚所新建的远程主机，就可看到运行在远程机器上的JAVA应用程序了</p>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/share/jstatd.html" title="jstatd - Virtual Machine jstat Daemon" target="_blank" rel="external">http://docs.oracle.com/javase/6/docs/technotes/tools/share/jstatd.html</a></p>
 
       
 
@@ -483,11 +493,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">

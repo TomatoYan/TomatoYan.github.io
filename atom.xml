@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-09T10:51:20.679Z</updated>
+  <updated>2017-08-10T07:47:37.190Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/09/jvisualvm%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7Tomcat/"/>
     <id>http：//tomato_peach.coding.me/2017/08/09/jvisualvm远程监控Tomcat/</id>
     <published>2017-08-09T10:02:17.000Z</published>
-    <updated>2017-08-09T10:51:20.679Z</updated>
+    <updated>2017-08-10T07:47:37.190Z</updated>
     
     <content type="html"><![CDATA[<h2 id="VisualVM：多合一故障处理工具"><a href="#VisualVM：多合一故障处理工具" class="headerlink" title="VisualVM：多合一故障处理工具"></a>VisualVM：多合一故障处理工具</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VisualVM(All-in-One Java Trouble Tool)是到目前为止随JDK发布功能最强大的运行监视和故障处理程序。而且VisualVM不需要被监视的程序基于特殊Agent运行，因此它对实际性能的影响很小，使得它可以直接应用在生产环境中。<br>界面如下：<br><img src="http://img.blog.csdn.net/20170809183644088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="界面1"></p>
 <a id="more"></a>
@@ -33,7 +33,7 @@
 <li>方法级的程序运行性能分析，找出被调用最多、运行时间最长的方法。</li>
 <li>离线程序快照：收集程序的运行时配置、线程dump、内存dump等信息建立一个快照，可以将快照发送开发者处进行Bug反馈。</li>
 </ul>
-<h2 id="VisualVM安装插件"><a href="#VisualVM安装插件" class="headerlink" title="VisualVM安装插件"></a>VisualVM安装插件</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于墙的原因，所以需要采取些措施，才能顺利的下载安装插件。<br><img src="http://img.blog.csdn.net/20170809183752146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="插件"></p>
+<h2 id="VisualVM安装插件"><a href="#VisualVM安装插件" class="headerlink" title="VisualVM安装插件"></a>VisualVM安装插件</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于墙的原因，所以需要采取些措施，才能顺利的下载安装插件。<br><img src="http://img.blog.csdn.net/20170810153927241?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="插件"></p>
 <h2 id="jvisualvm远程监控Tomcat"><a href="#jvisualvm远程监控Tomcat" class="headerlink" title="jvisualvm远程监控Tomcat"></a>jvisualvm远程监控Tomcat</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入我们的正题，利用jvisualvm远程监控Tomcat服务器。这里的Tomcat部署在远程Linux服务器上。</p>
 <h3 id="1-修改Tomcat下bin目录下的startup-sh"><a href="#1-修改Tomcat下bin目录下的startup-sh" class="headerlink" title="1.修改Tomcat下bin目录下的startup.sh"></a>1.修改Tomcat下bin目录下的startup.sh</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在startup.sh倒数第二行，也就是exec “$PRGDIR”/“$EXECUTABLE” start “$@”上一行添加如下内容：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>export CATALINA_OPTS=&quot;$CATALINA_OPTS
 -Dcom.sun.management.jmxremote
@@ -61,6 +61,16 @@ controlRole   readwrite
 <h3 id="4-修改两个文件权限"><a href="#4-修改两个文件权限" class="headerlink" title="4.修改两个文件权限"></a>4.修改两个文件权限</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改jmxremote.access和jmxremote.password的权限：sudo chmod 600 jmx*</p>
 <h3 id="5-重新启动Tomcat"><a href="#5-重新启动Tomcat" class="headerlink" title="5.重新启动Tomcat"></a>5.重新启动Tomcat</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以查看log下的日志看是否有错，并解决。</p>
 <h3 id="6-打开jvisualvm"><a href="#6-打开jvisualvm" class="headerlink" title="6.打开jvisualvm"></a>6.打开jvisualvm</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1 添加远程主机 6.2 添加JMX连接 确定连接即可<br><img src="http://img.blog.csdn.net/20170809183806389?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="连接"></p>
+<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><h2 id="监控JVM中运行的Java程序"><a href="#监控JVM中运行的Java程序" class="headerlink" title="监控JVM中运行的Java程序"></a>监控JVM中运行的Java程序</h2><p>前提：远程机器需要有Java环境</p>
+<p>1.在%JAVA_HOME%\bin目录下创建一个文件：jstatd.all.policy（名字可以变，扩展名不可以变），内容如下：</p>
+<pre><code>grant codebase &quot;file:${java.home}/../lib/tools.jar&quot; {
+   permission java.security.AllPermission;
+};
+</code></pre><p>这个文件的作用是让jstatd服务能够读取机器上的java应用程序的运行数据。</p>
+<p>2.在%JAVA_HOME%\bin目录下，执行如下命令：</p>
+<p>jstatd -J-Djava.security.policy=jstatd.all.policy</p>
+<p>3.展开刚所新建的远程主机，就可看到运行在远程机器上的JAVA应用程序了</p>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/share/jstatd.html" title="jstatd - Virtual Machine jstat Daemon" target="_blank" rel="external">http://docs.oracle.com/javase/6/docs/technotes/tools/share/jstatd.html</a></p>
 ]]></content>
     
     <summary type="html">
@@ -161,15 +171,33 @@ controlRole   readwrite
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/04/%E6%9C%80%E8%BF%91%E7%94%9F%E6%B4%BB/"/>
     <id>http：//tomato_peach.coding.me/2017/08/04/最近生活/</id>
     <published>2017-08-04T10:22:48.000Z</published>
-    <updated>2017-08-04T11:05:59.380Z</updated>
+    <updated>2017-08-12T15:17:18.023Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><p><code>你好呀！</code></p>
-<a id="more"></a>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="最近计划"><a href="#最近计划" class="headerlink" title="最近计划"></a>最近计划</h2><pre><code>其实朕只是个淫荡的狗皇帝，也不在乎什么狗命，也不懂什么喜欢朕的一生都在宫闱之内，头顶只有一方天地。
+而天地都没有人心。
+
+  是夜，群魔并举，王道崩倾。
+    她太脏了。
+        比朕的万里江山都脏。
+                            ---朱炫
+</code></pre><a id="more"></a>
+<p>最近在想着未来，想着以后的生活，我该何去何从，未来又该是什么计划呢？</p>
+<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><pre><code>1. 学习Spring系列，SpringBoot SpringMVC SpringCloud
+2. 学习Java数据结构 算法 Linux
+</code></pre><h2 id="具体目标"><a href="#具体目标" class="headerlink" title="具体目标"></a>具体目标</h2><pre><code>1. 每天要写计划，要学习多少，定量完成。
+2. 编程题训练 每天 计算机网络 数据库 数据结构 等的练习
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;Test&quot;&gt;&lt;/a&gt;Test&lt;/h1&gt;&lt;p&gt;&lt;code&gt;你好呀！&lt;/code&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;最近计划&quot;&gt;&lt;a href=&quot;#最近计划&quot; class=&quot;headerlink&quot; title=&quot;最近计划&quot;&gt;&lt;/a&gt;最近计划&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;其实朕只是个淫荡的狗皇帝，也不在乎什么狗命，也不懂什么喜欢朕的一生都在宫闱之内，头顶只有一方天地。
+而天地都没有人心。
+
+  是夜，群魔并举，王道崩倾。
+    她太脏了。
+        比朕的万里江山都脏。
+                            ---朱炫
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
