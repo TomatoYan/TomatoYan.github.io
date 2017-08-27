@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-27T11:40:57.316Z</updated>
+  <updated>2017-08-27T11:42:52.373Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -20,9 +20,31 @@
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/27/MongoDB%E7%9A%84%E5%AE%89%E8%A3%85/"/>
     <id>http：//tomato_peach.coding.me/2017/08/27/MongoDB的安装/</id>
     <published>2017-08-27T11:40:57.000Z</published>
-    <updated>2017-08-27T11:40:57.316Z</updated>
+    <updated>2017-08-27T11:42:52.373Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="mongodb-Linux下的安装"><a href="#mongodb-Linux下的安装" class="headerlink" title="mongodb Linux下的安装"></a>mongodb Linux下的安装</h1><h2 id="下载mongodb"><a href="#下载mongodb" class="headerlink" title="下载mongodb"></a>下载mongodb</h2><pre><code>wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz
+</code></pre><h2 id="解压mongodb安装包"><a href="#解压mongodb安装包" class="headerlink" title="解压mongodb安装包"></a>解压mongodb安装包</h2><pre><code>tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz
+</code></pre><h2 id="将解压后的文件移动到指定目录-可选"><a href="#将解压后的文件移动到指定目录-可选" class="headerlink" title="将解压后的文件移动到指定目录(可选)"></a>将解压后的文件移动到指定目录(可选)</h2><pre><code>mv mongodb-linux-x86_64-amazon-3.4.7/  /usr/local/mongodb
+</code></pre><h2 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h2><pre><code>vim ~/.bashrc  添加如下内容：
+export MONGODB_HOME=/usr/local/mongodb
+export PATH=$MONGODB_HOME/bin:$PATH
+
+配置生效： source ~/.bashrc
+mongod -v 查看mongodb版本信息查看环境变量是否配置正确
+</code></pre><a id="more"></a>]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;mongodb-Linux下的安装&quot;&gt;&lt;a href=&quot;#mongodb-Linux下的安装&quot; class=&quot;headerlink&quot; title=&quot;mongodb Linux下的安装&quot;&gt;&lt;/a&gt;mongodb Linux下的安装&lt;/h1&gt;&lt;h2 id=&quot;下载mongodb&quot;&gt;&lt;a href=&quot;#下载mongodb&quot; class=&quot;headerlink&quot; title=&quot;下载mongodb&quot;&gt;&lt;/a&gt;下载mongodb&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;解压mongodb安装包&quot;&gt;&lt;a href=&quot;#解压mongodb安装包&quot; class=&quot;headerlink&quot; title=&quot;解压mongodb安装包&quot;&gt;&lt;/a&gt;解压mongodb安装包&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;将解压后的文件移动到指定目录-可选&quot;&gt;&lt;a href=&quot;#将解压后的文件移动到指定目录-可选&quot; class=&quot;headerlink&quot; title=&quot;将解压后的文件移动到指定目录(可选)&quot;&gt;&lt;/a&gt;将解压后的文件移动到指定目录(可选)&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;mv mongodb-linux-x86_64-amazon-3.4.7/  /usr/local/mongodb
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;配置环境变量：&quot;&gt;&lt;a href=&quot;#配置环境变量：&quot; class=&quot;headerlink&quot; title=&quot;配置环境变量：&quot;&gt;&lt;/a&gt;配置环境变量：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;vim ~/.bashrc  添加如下内容：
+export MONGODB_HOME=/usr/local/mongodb
+export PATH=$MONGODB_HOME/bin:$PATH
+
+配置生效： source ~/.bashrc
+mongod -v 查看mongodb版本信息查看环境变量是否配置正确
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
