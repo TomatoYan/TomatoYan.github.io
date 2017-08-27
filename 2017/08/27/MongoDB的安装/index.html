@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="泛泛而谈">
 <meta property="og:description" content="mongodb Linux下的安装下载mongodbwget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz 解压mongodb安装包tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz 将解压后的文件移动到指定目录(可选)mv mongodb-linux-x86">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-27T11:50:52.999Z">
+<meta property="og:updated_time" content="2017-08-27T11:52:00.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB的安装">
 <meta name="twitter:description" content="mongodb Linux下的安装下载mongodbwget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz 解压mongodb安装包tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz 将解压后的文件移动到指定目录(可选)mv mongodb-linux-x86">
@@ -213,7 +213,18 @@ logpath=/data/log/mongodb.log
 logappend=true
 port=27017
 &lt;!-- 配置放在其他位置没有试过 --&gt;
-</code></pre><h3 id="配置文件参数说明"><a href="#配置文件参数说明" class="headerlink" title="配置文件参数说明:"></a>配置文件参数说明:</h3><pre><code>--path
+</code></pre><h3 id="配置文件参数说明"><a href="#配置文件参数说明" class="headerlink" title="配置文件参数说明:"></a>配置文件参数说明:</h3><pre><code>--dbpath 数据库路径(数据文件)
+--logpath 日志文件路径
+--master 指定为主机器
+--slave 指定为从机器
+--source 指定主机器的IP地址
+--pologSize 指定日志文件大小不超过64M.因为resync是非常操作量大且耗时，最好通过设置一个足够大的oplogSize来避免resync(默认的 oplog大小是空闲磁盘大小的5%)。
+--logappend 日志文件末尾添加
+--port 启用端口号
+--fork 在后台运行
+--only 指定只复制哪一个数据库
+--slavedelay 指从复制检测的时间间隔
+--auth 是否需要验证权限登录(用户名和密码)
 </code></pre><h3 id="mongodb的参数说明："><a href="#mongodb的参数说明：" class="headerlink" title="mongodb的参数说明："></a>mongodb的参数说明：</h3>
       
 
