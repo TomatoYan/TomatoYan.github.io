@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-27T11:50:15.961Z</updated>
+  <updated>2017-08-27T11:50:52.999Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/27/MongoDB%E7%9A%84%E5%AE%89%E8%A3%85/"/>
     <id>http：//tomato_peach.coding.me/2017/08/27/MongoDB的安装/</id>
     <published>2017-08-27T11:40:57.000Z</published>
-    <updated>2017-08-27T11:50:15.961Z</updated>
+    <updated>2017-08-27T11:50:52.999Z</updated>
     
     <content type="html"><![CDATA[<h1 id="mongodb-Linux下的安装"><a href="#mongodb-Linux下的安装" class="headerlink" title="mongodb Linux下的安装"></a>mongodb Linux下的安装</h1><h2 id="下载mongodb"><a href="#下载mongodb" class="headerlink" title="下载mongodb"></a>下载mongodb</h2><pre><code>wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz
 </code></pre><h2 id="解压mongodb安装包"><a href="#解压mongodb安装包" class="headerlink" title="解压mongodb安装包"></a>解压mongodb安装包</h2><pre><code>tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz
@@ -41,7 +41,8 @@ logpath=/data/log/mongodb.log
 logappend=true
 port=27017
 &lt;!-- 配置放在其他位置没有试过 --&gt;
-</code></pre><h3 id="配置文件参数说明"><a href="#配置文件参数说明" class="headerlink" title="配置文件参数说明:"></a>配置文件参数说明:</h3><h3 id="mongodb的参数说明："><a href="#mongodb的参数说明：" class="headerlink" title="mongodb的参数说明："></a>mongodb的参数说明：</h3>]]></content>
+</code></pre><h3 id="配置文件参数说明"><a href="#配置文件参数说明" class="headerlink" title="配置文件参数说明:"></a>配置文件参数说明:</h3><pre><code>--path
+</code></pre><h3 id="mongodb的参数说明："><a href="#mongodb的参数说明：" class="headerlink" title="mongodb的参数说明："></a>mongodb的参数说明：</h3>]]></content>
     
     <summary type="html">
     
