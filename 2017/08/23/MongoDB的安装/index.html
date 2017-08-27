@@ -11,7 +11,7 @@
   <meta name="description" content="mongodb Linux下的安装下载mongodbwget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz 解压mongodb安装包tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz 将解压后的文件移动到指定目录(可选)mv mongodb-linux-x86">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB的安装">
-<meta property="og:url" content="http：//tomato_peach.coding.me/2017/08/27/MongoDB的安装/index.html">
+<meta property="og:url" content="http：//tomato_peach.coding.me/2017/08/23/MongoDB的安装/index.html">
 <meta property="og:site_name" content="泛泛而谈">
 <meta property="og:description" content="mongodb Linux下的安装下载mongodbwget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz 解压mongodb安装包tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz 将解压后的文件移动到指定目录(可选)mv mongodb-linux-x86">
 <meta property="og:locale" content="zh-Hans">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20170827185626674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170827185657764?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170827185825745?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-08-27T11:54:26.791Z">
+<meta property="og:updated_time" content="2017-08-27T11:58:13.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB的安装">
 <meta name="twitter:description" content="mongodb Linux下的安装下载mongodbwget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz 解压mongodb安装包tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz 将解压后的文件移动到指定目录(可选)mv mongodb-linux-x86">
@@ -193,8 +193,8 @@
   
 
         
-        <a href="/2017/08/27/MongoDB的安装/" class="archive-article-date">
-  	<time datetime="2017-08-27T11:40:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
+        <a href="/2017/08/23/MongoDB的安装/" class="archive-article-date">
+  	<time datetime="2017-08-23T11:40:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
 </a>
         
       </header>
@@ -204,14 +204,14 @@
         <h1 id="mongodb-Linux下的安装"><a href="#mongodb-Linux下的安装" class="headerlink" title="mongodb Linux下的安装"></a>mongodb Linux下的安装</h1><h2 id="下载mongodb"><a href="#下载mongodb" class="headerlink" title="下载mongodb"></a>下载mongodb</h2><pre><code>wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz
 </code></pre><h2 id="解压mongodb安装包"><a href="#解压mongodb安装包" class="headerlink" title="解压mongodb安装包"></a>解压mongodb安装包</h2><pre><code>tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz
 </code></pre><h2 id="将解压后的文件移动到指定目录-可选"><a href="#将解压后的文件移动到指定目录-可选" class="headerlink" title="将解压后的文件移动到指定目录(可选)"></a>将解压后的文件移动到指定目录(可选)</h2><pre><code>mv mongodb-linux-x86_64-amazon-3.4.7/  /usr/local/mongodb
-</code></pre><h2 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h2><pre><code>vim ~/.bashrc  添加如下内容：
+</code></pre><a id="more"></a>
+<h2 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h2><pre><code>vim ~/.bashrc  添加如下内容：
 export MONGODB_HOME=/usr/local/mongodb
 export PATH=$MONGODB_HOME/bin:$PATH
 
 配置生效： source ~/.bashrc
 mongod -v 查看mongodb版本信息查看环境变量是否配置正确
-</code></pre><a id="more"></a>
-<h2 id="创建数据库目录："><a href="#创建数据库目录：" class="headerlink" title="创建数据库目录："></a>创建数据库目录：</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MongoDB的数据存储在data目录的db目录下，但是这个目录在安装过程不会自动创建，所以你需要手动创建data目录，并在data目录中创建db目录,注意：如果你的数据库目录不是/data/db，可以通过 –dbpath 来指定<br>mkdir -p /data/db<br>mkdir -p /data/log<br>touch /data/log/mongodb.log</p>
+</code></pre><h2 id="创建数据库目录："><a href="#创建数据库目录：" class="headerlink" title="创建数据库目录："></a>创建数据库目录：</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MongoDB的数据存储在data目录的db目录下，但是这个目录在安装过程不会自动创建，所以你需要手动创建data目录，并在data目录中创建db目录,注意：如果你的数据库目录不是/data/db，可以通过 –dbpath 来指定<br>mkdir -p /data/db<br>mkdir -p /data/log<br>touch /data/log/mongodb.log</p>
 <h3 id="添加配置文件："><a href="#添加配置文件：" class="headerlink" title="添加配置文件："></a>添加配置文件：</h3><pre><code>touch /etc/conf/mongodb.conf
 新建mongodb.conf配置文件
 vim /etc/conf/mongodb.conf
@@ -343,7 +343,7 @@ switched to db test
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http:http：//tomato_peach.coding.me/2017/08/27/MongoDB的安装/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:http：//tomato_peach.coding.me/2017/08/23/MongoDB的安装/" alt="微信分享二维码">
     </div>
 </div>
 
