@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-31T02:28:48.069Z</updated>
+  <updated>2017-08-31T06:11:07.161Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/28/MongoDB%E5%AD%A6%E4%B9%A0-%E4%B8%80/"/>
     <id>http：//tomato_peach.coding.me/2017/08/28/MongoDB学习-一/</id>
     <published>2017-08-28T05:14:52.000Z</published>
-    <updated>2017-08-31T02:28:48.069Z</updated>
+    <updated>2017-08-31T06:11:07.161Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><pre><code>文档是MongoDB中数据的基本单元，类似于关系数据库中的行。
 集合可以被看做是没有模式的表。
@@ -157,7 +157,7 @@ print(e);
 }
 return db+&quot;&gt;&quot;;
 };
-</code></pre><p><br><br><br><br><br><br><br><br><br><br><br>读书笔记 — MongoDB权威指南 转载表明出处 TomatoYan<br><!--戎戎 我喜欢你--></p>
+</code></pre><p>&lt;!- end -&gt;<br><br><br><br><br><br><br><br><br><br><br><br>读书笔记 — MongoDB权威指南 转载表明出处 TomatoYan<br><!--戎戎 我喜欢你--></p>
 ]]></content>
     
     <summary type="html">
@@ -189,7 +189,7 @@ MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自�
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/23/MongoDB%E7%9A%84%E5%AE%89%E8%A3%85/"/>
     <id>http：//tomato_peach.coding.me/2017/08/23/MongoDB的安装/</id>
     <published>2017-08-23T11:40:57.000Z</published>
-    <updated>2017-08-31T02:05:46.339Z</updated>
+    <updated>2017-08-31T06:10:53.249Z</updated>
     
     <content type="html"><![CDATA[<h1 id="mongodb-Linux下的安装"><a href="#mongodb-Linux下的安装" class="headerlink" title="mongodb Linux下的安装"></a>mongodb Linux下的安装</h1><h2 id="下载mongodb"><a href="#下载mongodb" class="headerlink" title="下载mongodb"></a>下载mongodb</h2><pre><code>wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.4.7.tgz
 </code></pre><h2 id="解压mongodb安装包"><a href="#解压mongodb安装包" class="headerlink" title="解压mongodb安装包"></a>解压mongodb安装包</h2><pre><code>tar -zxvf mongodb-linux-x86_64-amazon-3.4.7.tgz
@@ -244,6 +244,7 @@ switched to db test
 </code></pre><p><img src="http://img.blog.csdn.net/20170827185657764?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <pre><code>然后打开新的窗口输入  .\mongo.exe即可进入mongodb服务器
 </code></pre><p><img src="http://img.blog.csdn.net/20170827185825745?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>&lt;!- end -&gt;</p>
 ]]></content>
     
     <summary type="html">
@@ -265,7 +266,7 @@ switched to db test
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/09/jvisualvm%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7Tomcat/"/>
     <id>http：//tomato_peach.coding.me/2017/08/09/jvisualvm远程监控Tomcat/</id>
     <published>2017-08-09T10:02:17.000Z</published>
-    <updated>2017-08-10T07:47:37.190Z</updated>
+    <updated>2017-08-31T06:10:40.385Z</updated>
     
     <content type="html"><![CDATA[<h2 id="VisualVM：多合一故障处理工具"><a href="#VisualVM：多合一故障处理工具" class="headerlink" title="VisualVM：多合一故障处理工具"></a>VisualVM：多合一故障处理工具</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VisualVM(All-in-One Java Trouble Tool)是到目前为止随JDK发布功能最强大的运行监视和故障处理程序。而且VisualVM不需要被监视的程序基于特殊Agent运行，因此它对实际性能的影响很小，使得它可以直接应用在生产环境中。<br>界面如下：<br><img src="http://img.blog.csdn.net/20170809183644088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="界面1"></p>
 <a id="more"></a>
@@ -316,6 +317,7 @@ controlRole   readwrite
 <p>jstatd -J-Djava.security.policy=jstatd.all.policy</p>
 <p>3.展开刚所新建的远程主机，就可看到运行在远程机器上的JAVA应用程序了</p>
 <h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/share/jstatd.html" title="jstatd - Virtual Machine jstat Daemon" target="_blank" rel="external">http://docs.oracle.com/javase/6/docs/technotes/tools/share/jstatd.html</a></p>
+<p>&lt;!- end -&gt;</p>
 ]]></content>
     
     <summary type="html">
@@ -334,9 +336,15 @@ controlRole   readwrite
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
     <id>http：//tomato_peach.coding.me/2017/08/07/Docker教程/</id>
     <published>2017-08-07T07:45:12.000Z</published>
-    <updated>2017-08-07T07:47:57.324Z</updated>
+    <updated>2017-08-31T06:10:30.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>&lt;!- end -&gt;</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&amp;lt;!- end -&amp;gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -348,7 +356,7 @@ controlRole   readwrite
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/07/%E9%85%8D%E7%BD%AE%E6%9C%80%E5%B0%8Foracle%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%85%83/"/>
     <id>http：//tomato_peach.coding.me/2017/08/07/配置最小oracle实例单元/</id>
     <published>2017-08-07T07:12:56.000Z</published>
-    <updated>2017-08-08T07:40:52.588Z</updated>
+    <updated>2017-08-31T06:12:00.965Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Oracle开发的关系数据库产品因性能卓越而闻名，许多大型网站也选用了Oracle系统，是世界最好的数据库产品。但Oracle数据库管理软件却十分庞大，在本地安装总会开启一堆服务，同时占用大量的磁盘空间和内存。Oracle提供了Oracle SQL Developer这样的管理工具(下载地址: <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)，我们可以使用这个工具对本地和远程的Oracle数据库进行管理，SQL" target="_blank" rel="external">http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)，我们可以使用这个工具对本地和远程的Oracle数据库进行管理，SQL</a> Developer是Oracle公司出品的一个免费非开源的用以开发数据库应用程序的图形化工具，使用 SQL Developer 可以浏览数据库对象、运行 SQL 语句和脚本、编辑和调试 PL/SQL 语句，但SQL Developer 需要的开发环境要去会比较高(JDK &gt;1.8)，同时，只可以连接到任何Oracle 10g及其后续版本的数据库，此外SQL Developer市场占有率并不高，市场份额基本都被PL/SQL Developer所占有。而PL/SQL Developer 的使用需要有Oracle的一些支持(SQL Developer不需要)，所以我们需要配置最小Oracle实例单元。</p>
 <a id="more"></a>
@@ -374,7 +382,8 @@ controlRole   readwrite
 <pre><code>1&gt;.选择&quot;Path&quot; - 点击&quot;编辑&quot;, 把 &quot;E:\app\Administrator\product\instantclient_11_2;&quot; 加入;
 2&gt;.点击&quot;新建&quot;, 变量名设置为&quot;TNS_ADMIN&quot;, 变量值设置为&quot;E:\app\Administrator\product\instantclient_11_2;&quot;, 点击&quot;确定&quot;;
 3&gt;.点击&quot;新建&quot;, 变量名设置为&quot;NLS_LANG&quot;, 变量值设置为&quot;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&quot;, 点击&quot;确定&quot;;字符编码变量配置，防止有乱码
-</code></pre>]]></content>
+</code></pre><p>&lt;!- end -&gt;</p>
+]]></content>
     
     <summary type="html">
     
@@ -491,7 +500,7 @@ controlRole   readwrite
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
     <id>http：//tomato_peach.coding.me/2017/08/02/Nginx负载均衡的搭建/</id>
     <published>2017-08-02T02:56:18.000Z</published>
-    <updated>2017-08-04T10:56:45.992Z</updated>
+    <updated>2017-08-31T06:11:29.145Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Nginx的简介"><a href="#Nginx的简介" class="headerlink" title="Nginx的简介"></a>Nginx的简介</h2><p>Nginx 是一个很强大的高性能Web和反向代理服务器。</p>
 <h2 id="Nginx优点"><a href="#Nginx优点" class="headerlink" title="Nginx优点"></a>Nginx优点</h2><ol>
@@ -580,7 +589,10 @@ http {
            prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot;
            pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
 </code></pre><p>注释掉即可。</p>
-<h3 id="Nginx日志关闭"><a href="#Nginx日志关闭" class="headerlink" title="Nginx日志关闭"></a>Nginx日志关闭</h3><p>开发环境我默认不写日志，即不配置任何access_log<br>Nginx的http段中，设置access log：access_log off;<br>其他日志可以百度查找相关方法</p>
+<h3 id="Nginx日志关闭"><a href="#Nginx日志关闭" class="headerlink" title="Nginx日志关闭"></a>Nginx日志关闭</h3><pre><code>开发环境我默认不写日志，即不配置任何access_log
+Nginx的http段中，设置access log：access_log off;
+其他日志可以百度查找相关方法
+</code></pre><p>&lt;!- end -&gt;</p>
 ]]></content>
     
     <summary type="html">
@@ -605,7 +617,7 @@ http {
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/01/hello-world/"/>
     <id>http：//tomato_peach.coding.me/2017/08/01/hello-world/</id>
     <published>2017-08-01T06:02:18.000Z</published>
-    <updated>2017-08-04T10:55:44.921Z</updated>
+    <updated>2017-08-31T06:10:22.384Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -617,6 +629,7 @@ http {
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>&lt;!- end -&gt;</p>
 ]]></content>
     
     <summary type="html">

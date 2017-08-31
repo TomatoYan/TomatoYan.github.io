@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="泛泛而谈">
 <meta property="og:description" content="Nginx的简介Nginx 是一个很强大的高性能Web和反向代理服务器。 Nginx优点 作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。 Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-04T10:56:45.992Z">
+<meta property="og:updated_time" content="2017-08-31T06:11:29.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx负载均衡的搭建">
 <meta name="twitter:description" content="Nginx的简介Nginx 是一个很强大的高性能Web和反向代理服务器。 Nginx优点 作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。 Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到">
@@ -282,7 +282,10 @@ http {
            prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot;
            pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
 </code></pre><p>注释掉即可。</p>
-<h3 id="Nginx日志关闭"><a href="#Nginx日志关闭" class="headerlink" title="Nginx日志关闭"></a>Nginx日志关闭</h3><p>开发环境我默认不写日志，即不配置任何access_log<br>Nginx的http段中，设置access log：access_log off;<br>其他日志可以百度查找相关方法</p>
+<h3 id="Nginx日志关闭"><a href="#Nginx日志关闭" class="headerlink" title="Nginx日志关闭"></a>Nginx日志关闭</h3><pre><code>开发环境我默认不写日志，即不配置任何access_log
+Nginx的http段中，设置access log：access_log off;
+其他日志可以百度查找相关方法
+</code></pre><p>&lt;!- end -&gt;</p>
 
       
 
