@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-31T06:11:07.161Z</updated>
+  <updated>2017-08-31T06:13:31.880Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/28/MongoDB%E5%AD%A6%E4%B9%A0-%E4%B8%80/"/>
     <id>http：//tomato_peach.coding.me/2017/08/28/MongoDB学习-一/</id>
     <published>2017-08-28T05:14:52.000Z</published>
-    <updated>2017-08-31T06:11:07.161Z</updated>
+    <updated>2017-08-31T06:13:31.880Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><pre><code>文档是MongoDB中数据的基本单元，类似于关系数据库中的行。
 集合可以被看做是没有模式的表。
@@ -157,7 +157,8 @@ print(e);
 }
 return db+&quot;&gt;&quot;;
 };
-</code></pre><p>&lt;!- end -&gt;<br><br><br><br><br><br><br><br><br><br><br><br>读书笔记 — MongoDB权威指南 转载表明出处 TomatoYan<br><!--戎戎 我喜欢你--></p>
+</code></pre><p>&lt;!- end -&gt;</p>
+<p><br><br><br><br><br><br><br><br><br><br><br>读书笔记 — MongoDB权威指南 转载表明出处 TomatoYan<br><!--戎戎 我喜欢你--></p>
 ]]></content>
     
     <summary type="html">
