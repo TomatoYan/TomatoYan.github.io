@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
-  <updated>2017-08-31T02:24:51.228Z</updated>
+  <updated>2017-08-31T02:28:48.069Z</updated>
   <id>http：//tomato_peach.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/28/MongoDB%E5%AD%A6%E4%B9%A0-%E4%B8%80/"/>
     <id>http：//tomato_peach.coding.me/2017/08/28/MongoDB学习-一/</id>
     <published>2017-08-28T05:14:52.000Z</published>
-    <updated>2017-08-31T02:24:51.228Z</updated>
+    <updated>2017-08-31T02:28:48.069Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><pre><code>文档是MongoDB中数据的基本单元，类似于关系数据库中的行。
 集合可以被看做是没有模式的表。
@@ -32,13 +32,15 @@ MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自�
 <li>MongoDB不但区分类型，还区分大小写；</li>
 <li>MongoDB不允许有重复的键；</li>
 <li>集合就是一组文档；</li>
-<li>集合是无模式的；<h2 id="集合概念"><a href="#集合概念" class="headerlink" title="集合概念"></a>集合概念</h2></li>
+<li>集合是无模式的；</li>
+</ul>
+<a id="more"></a>
+<h2 id="集合概念"><a href="#集合概念" class="headerlink" title="集合概念"></a>集合概念</h2><ul>
 <li>集合名不能是空字符串 “”；</li>
 <li>集合名不能含有 \0 字符串，这个字符表示集合名的结尾；</li>
 <li>集合名不能以“system”开头，这是为系统保留的前缀；</li>
 <li>用户创建的集合名字不能含有保留字符 $ ；</li>
 </ul>
-<a id="more"></a>
 <h2 id="数据库概念"><a href="#数据库概念" class="headerlink" title="数据库概念"></a>数据库概念</h2><p>MongoDB中多个文档组成集合，同样多个集合组成数据库。一个MongoDB实例可以承载多个数据库，每个数据库拥有0个或多个集合，它们之间可以视为完全独立的。每个数据库有独立的权限控制。<br>数据库名满足的条件：</p>
 <ul>
 <li>不能是空字符串</li>
@@ -170,11 +172,7 @@ MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自�
 &lt;li&gt;MongoDB不但区分类型，还区分大小写；&lt;/li&gt;
 &lt;li&gt;MongoDB不允许有重复的键；&lt;/li&gt;
 &lt;li&gt;集合就是一组文档；&lt;/li&gt;
-&lt;li&gt;集合是无模式的；&lt;h2 id=&quot;集合概念&quot;&gt;&lt;a href=&quot;#集合概念&quot; class=&quot;headerlink&quot; title=&quot;集合概念&quot;&gt;&lt;/a&gt;集合概念&lt;/h2&gt;&lt;/li&gt;
-&lt;li&gt;集合名不能是空字符串 “”；&lt;/li&gt;
-&lt;li&gt;集合名不能含有 \0 字符串，这个字符表示集合名的结尾；&lt;/li&gt;
-&lt;li&gt;集合名不能以“system”开头，这是为系统保留的前缀；&lt;/li&gt;
-&lt;li&gt;用户创建的集合名字不能含有保留字符 $ ；&lt;/li&gt;
+&lt;li&gt;集合是无模式的；&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
