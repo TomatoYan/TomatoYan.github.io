@@ -4,9 +4,9 @@
   <subtitle>大抵浮生若梦，姑且此处销魂。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http%EF%BC%9A//tomato_peach.coding.me/"/>
+  <link href="http://tomatoyan.github.io/"/>
   <updated>2017-08-31T06:13:31.880Z</updated>
-  <id>http：//tomato_peach.coding.me/</id>
+  <id>http://tomatoyan.github.io/</id>
   
   <author>
     <name>Tomato Yan</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>MongoDB学习(一)</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/28/MongoDB%E5%AD%A6%E4%B9%A0-%E4%B8%80/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/28/MongoDB学习-一/</id>
+    <link href="http://tomatoyan.github.io/2017/08/28/MongoDB%E5%AD%A6%E4%B9%A0-%E4%B8%80/"/>
+    <id>http://tomatoyan.github.io/2017/08/28/MongoDB学习-一/</id>
     <published>2017-08-28T05:14:52.000Z</published>
     <updated>2017-08-31T06:13:31.880Z</updated>
     
@@ -179,16 +179,16 @@ MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自�
     </summary>
     
     
-      <category term="mongoDB" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/mongoDB/"/>
+      <category term="mongoDB" scheme="http://tomatoyan.github.io/tags/mongoDB/"/>
     
-      <category term="读书笔记" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://tomatoyan.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB的安装</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/23/MongoDB%E7%9A%84%E5%AE%89%E8%A3%85/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/23/MongoDB的安装/</id>
+    <link href="http://tomatoyan.github.io/2017/08/23/MongoDB%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>http://tomatoyan.github.io/2017/08/23/MongoDB的安装/</id>
     <published>2017-08-23T11:40:57.000Z</published>
     <updated>2017-08-31T06:10:53.249Z</updated>
     
@@ -258,14 +258,14 @@ switched to db test
     </summary>
     
     
-      <category term="mongoDB" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/mongoDB/"/>
+      <category term="mongoDB" scheme="http://tomatoyan.github.io/tags/mongoDB/"/>
     
   </entry>
   
   <entry>
     <title>jvisualvm远程监控Tomcat</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/09/jvisualvm%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7Tomcat/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/09/jvisualvm远程监控Tomcat/</id>
+    <link href="http://tomatoyan.github.io/2017/08/09/jvisualvm%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7Tomcat/"/>
+    <id>http://tomatoyan.github.io/2017/08/09/jvisualvm远程监控Tomcat/</id>
     <published>2017-08-09T10:02:17.000Z</published>
     <updated>2017-08-31T06:10:40.385Z</updated>
     
@@ -328,14 +328,14 @@ controlRole   readwrite
     </summary>
     
     
-      <category term="jvm" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/jvm/"/>
+      <category term="jvm" scheme="http://tomatoyan.github.io/tags/jvm/"/>
     
   </entry>
   
   <entry>
     <title>Docker教程</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/07/Docker教程/</id>
+    <link href="http://tomatoyan.github.io/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
+    <id>http://tomatoyan.github.io/2017/08/07/Docker教程/</id>
     <published>2017-08-07T07:45:12.000Z</published>
     <updated>2017-08-31T06:10:30.702Z</updated>
     
@@ -354,8 +354,8 @@ controlRole   readwrite
   
   <entry>
     <title>配置最小oracle实例单元</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/07/%E9%85%8D%E7%BD%AE%E6%9C%80%E5%B0%8Foracle%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%85%83/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/07/配置最小oracle实例单元/</id>
+    <link href="http://tomatoyan.github.io/2017/08/07/%E9%85%8D%E7%BD%AE%E6%9C%80%E5%B0%8Foracle%E5%AE%9E%E4%BE%8B%E5%8D%95%E5%85%83/"/>
+    <id>http://tomatoyan.github.io/2017/08/07/配置最小oracle实例单元/</id>
     <published>2017-08-07T07:12:56.000Z</published>
     <updated>2017-08-31T06:12:00.965Z</updated>
     
@@ -393,14 +393,14 @@ controlRole   readwrite
     </summary>
     
     
-      <category term="数据库" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://tomatoyan.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>澜澜的天上白云飘</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/04/%E6%BE%9C%E6%BE%9C%E7%9A%84%E5%A4%A9%E4%B8%8A%E7%99%BD%E4%BA%91%E9%A3%98/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/04/澜澜的天上白云飘/</id>
+    <link href="http://tomatoyan.github.io/2017/08/04/%E6%BE%9C%E6%BE%9C%E7%9A%84%E5%A4%A9%E4%B8%8A%E7%99%BD%E4%BA%91%E9%A3%98/"/>
+    <id>http://tomatoyan.github.io/2017/08/04/澜澜的天上白云飘/</id>
     <published>2017-08-04T11:03:44.000Z</published>
     <updated>2017-08-12T15:45:23.666Z</updated>
     
@@ -451,14 +451,14 @@ controlRole   readwrite
     </summary>
     
     
-      <category term="随笔" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://tomatoyan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>Nginx负载均衡的搭建</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/02/Nginx负载均衡的搭建/</id>
+    <link href="http://tomatoyan.github.io/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+    <id>http://tomatoyan.github.io/2017/08/02/Nginx负载均衡的搭建/</id>
     <published>2017-08-02T02:56:18.000Z</published>
     <updated>2017-08-31T06:11:29.145Z</updated>
     
@@ -568,14 +568,14 @@ Nginx的http段中，设置access log：access_log off;
     </summary>
     
     
-      <category term="Nginx" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/Nginx/"/>
+      <category term="Nginx" scheme="http://tomatoyan.github.io/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http%EF%BC%9A//tomato_peach.coding.me/2017/08/01/hello-world/"/>
-    <id>http：//tomato_peach.coding.me/2017/08/01/hello-world/</id>
+    <link href="http://tomatoyan.github.io/2017/08/01/hello-world/"/>
+    <id>http://tomatoyan.github.io/2017/08/01/hello-world/</id>
     <published>2017-08-01T06:02:18.000Z</published>
     <updated>2017-08-31T06:10:22.384Z</updated>
     
@@ -601,7 +601,7 @@ Nginx的http段中，设置access log：access_log off;
     </summary>
     
     
-      <category term="hexo" scheme="http%EF%BC%9A//tomato_peach.coding.me/tags/hexo/"/>
+      <category term="hexo" scheme="http://tomatoyan.github.io/tags/hexo/"/>
     
   </entry>
   
