@@ -456,6 +456,49 @@ controlRole   readwrite
   </entry>
   
   <entry>
+    <title>最近生活</title>
+    <link href="http://tomatoyan.github.io/2017/08/04/%E6%9C%80%E8%BF%91%E7%94%9F%E6%B4%BB/"/>
+    <id>http://tomatoyan.github.io/2017/08/04/最近生活/</id>
+    <published>2017-08-04T10:22:48.000Z</published>
+    <updated>2017-09-27T06:23:41.559Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最近计划"><a href="#最近计划" class="headerlink" title="最近计划"></a>最近计划</h2><pre><code>其实朕只是个淫荡的狗皇帝，也不在乎什么狗命，也不懂什么喜欢朕的一生都在宫闱之内，头顶只有一方天地。
+而天地都没有人心。
+
+  是夜，群魔并举，王道崩倾。
+    她太脏了。
+        比朕的万里江山都脏。
+                            ---朱炫
+</code></pre><a id="more"></a>
+<p>最近在想着未来，想着以后的生活，我该何去何从，未来又该是什么计划呢？</p>
+<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><pre><code>1. 学习Spring系列，SpringBoot SpringMVC SpringCloud
+2. 学习Java数据结构 算法 Linux
+</code></pre><h2 id="具体目标"><a href="#具体目标" class="headerlink" title="具体目标"></a>具体目标</h2><pre><code>1. 每天要写计划，要学习多少，定量完成。
+2. 编程题训练 每天 计算机网络 数据库 数据结构 等的练习
+3. 每天40道笔试题，编程语言、计算机网络、数据库、操作系统各10道
+</code></pre><!-- 想念武治含 -->
+<p>&lt;!- end -&gt;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;最近计划&quot;&gt;&lt;a href=&quot;#最近计划&quot; class=&quot;headerlink&quot; title=&quot;最近计划&quot;&gt;&lt;/a&gt;最近计划&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;其实朕只是个淫荡的狗皇帝，也不在乎什么狗命，也不懂什么喜欢朕的一生都在宫闱之内，头顶只有一方天地。
+而天地都没有人心。
+
+  是夜，群魔并举，王道崩倾。
+    她太脏了。
+        比朕的万里江山都脏。
+                            ---朱炫
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://tomatoyan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Nginx负载均衡的搭建</title>
     <link href="http://tomatoyan.github.io/2017/08/02/Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
     <id>http://tomatoyan.github.io/2017/08/02/Nginx负载均衡的搭建/</id>
