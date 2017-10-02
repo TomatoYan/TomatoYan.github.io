@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://tomatoyan.github.io">
-  <title>Archives | 泛泛而谈</title>
+  <title>深入探讨Java字符串的拼接 | 泛泛而谈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="胆小认生，不易相处">
-<meta property="og:type" content="website">
-<meta property="og:title" content="泛泛而谈">
-<meta property="og:url" content="http://tomatoyan.github.io/archives/index.html">
+  <meta name="description" content="前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。 String中的equalspublic boolean equals(Object anObject) {     if (this == anObject) {         return true;     }     if (anObject instanceof Stri">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入探讨Java字符串的拼接">
+<meta property="og:url" content="http://tomatoyan.github.io/2017/10/02/深入探讨Java字符串的拼接/index.html">
 <meta property="og:site_name" content="泛泛而谈">
-<meta property="og:description" content="胆小认生，不易相处">
+<meta property="og:description" content="前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。 String中的equalspublic boolean equals(Object anObject) {     if (this == anObject) {         return true;     }     if (anObject instanceof Stri">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-02T14:23:56.072Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="泛泛而谈">
-<meta name="twitter:description" content="胆小认生，不易相处">
+<meta name="twitter:title" content="深入探讨Java字符串的拼接">
+<meta name="twitter:description" content="前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。 String中的equalspublic boolean equals(Object anObject) {     if (this == anObject) {         return true;     }     if (anObject instanceof Stri">
   
     <link rel="alternative" href="/atom.xml" title="泛泛而谈" type="application/atom+xml">
   
@@ -179,36 +181,146 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-深入探讨Java字符串的拼接" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/02/深入探讨Java字符串的拼接/" class="archive-article-date">
-  	<time datetime="2017-10-02T07:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/02/深入探讨Java字符串的拼接/">深入探讨Java字符串的拼接</a>
+    <h1 class="article-title" itemprop="name">
+      深入探讨Java字符串的拼接
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/02/深入探讨Java字符串的拼接/" class="archive-article-date">
+  	<time datetime="2017-10-02T07:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。
+</code></pre><h1 id="String中的equals"><a href="#String中的equals" class="headerlink" title="String中的equals"></a>String中的equals</h1><pre><code>public boolean equals(Object anObject) {
+    if (this == anObject) {
+        return true;
+    }
+    if (anObject instanceof String) {
+        String anotherString = (String)anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+</code></pre><a id="more"></a>
+<p>这是String复写的equals的源码，在Object中equals方法返回的是两者地址值，即：</p>
+<pre><code>public boolean equals(Object obj) {
+    return (this == obj);
+}
+</code></pre><p>也就是说，如果这两个地址相同则返回true，不进行内容的比较。例如，</p>
+<pre><code>String s1 = &quot;abc&quot;;
+String s2 = &quot;abc&quot;;
+</code></pre><p>由于这两个变量都在常量池，所以地址会一致，所以返回true。之后的判断也一目了然，首先判断是否属于String类，然后判断内容是否一致。</p>
+<h1 id="String中的HashCode"><a href="#String中的HashCode" class="headerlink" title="String中的HashCode"></a>String中的HashCode</h1><pre><code>hashcode是何许物种？我们可以查到一种解释，hashCode是jdk根据对象的地址或者字符串或者数字算出来的int类型的数值，在Object中也可以看到对HashCode生成的方法，是一个native类，但好在有注释，Whenever it is invoked on the same object more than once during an execution of a Java application, the method must consistently return the same integer.底层是C++的实现，但总而言之，是可以用它确定对象地址是否相同的。
+</code></pre><p>在String类中，复写了hashCode的生成方法，显得简单了很多，这里的hashcode将String字符串经过计算得到了一个数字，计算方法如下：</p>
+<pre><code>public int hashCode() {
+    int h = hash;
+    if (h == 0 &amp;&amp; value.length &gt; 0) {
+        char val[] = value;
+
+        for (int i = 0; i &lt; value.length; i++) {
+            h = 31 * h + val[i];
+        }
+        hash = h;
+    }
+    return h;
+}
+</code></pre><p>也就是将每个字符转成ASCII码，通过公式算得。例如：</p>
+<pre><code>String str = &quot;abc&quot;;
+System.out.println(str.hashCode());
+System.out.println(31*((31*97)+98)+99);
+即为：96354
+同时我们可以看出字符串a的hashcode为97
+System.out.println(&quot;a&quot;.hashCode()); ==&gt; 97
+</code></pre><p>其实有很多类都复写了hashcode方法，例如Integer，直接返回了Integer的值。</p>
+<pre><code>public int hashCode() {
+    return Integer.hashCode(value);
+}
+</code></pre><h1 id="String中的-拼接"><a href="#String中的-拼接" class="headerlink" title="String中的 + 拼接"></a>String中的 + 拼接</h1><p>终于引出来我们最需要了解的一个方法了。</p>
+<pre><code>引出今天探索的原因是String是一个被final修饰的类
+    public final class String
+所以，我就在想，通过 + 的字符拼接是怎么进行的，== 是判断地址的，那么由于String是一个不可变的类，也就是说，+ 拼接完后的String还是不是它本身。
+如代码：
+    String s = &quot;hello&quot;;
+    String str = &quot;hello&quot;;
+    System.out.println(s==str);
+    s+=&quot;world&quot;;
+    System.out.println(s==str);
+假设s的地址没有发生改变的话，那么两个判断都应该是true，然而结果是第一个是true，第二个是false，我们也就可以这样猜想，是不是这个拼接后的s，已经不是之前的s。
+
+之后我们又进行了如下测试，返回值是false，也就是说，str1与str2地址不同，这个很好理解，因为是new操作，所以hello就存放在了两个堆区，同时str1和str2的地址值存放到了栈中。
+    String str1 = new String(&quot;hello&quot;);
+    String str2 = new String(&quot;hello&quot;);
+    System.out.println(str1 == str2);
+</code></pre><p>通过反编译代码，可以发现String中 + 进行拼接，实际上是创建了一个StringBuilder，事实上这个我还真没反编译出来，网上找到的参考资料如下：</p>
+<pre><code>String str0 = &quot;a&quot;;
+StringBuilder sb = new StringBuilder();
+sb.append(str0).append(&quot;b&quot;);
+String str1 = sb.toString();
+
+来自：http://www.jianshu.com/p/849f1d443b3a
+</code></pre><p>所以，String引用对象在拼接时，建立了临时缓存的StringBuilder，因此地址发生了变化。</p>
+<p>&lt;!- end -&gt;</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢您请我吃番茄<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -220,167 +332,126 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+        <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+      
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://tomatoyan.github.io/2017/10/02/深入探讨Java字符串的拼接/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/28/MongoDB学习-一/" class="archive-article-date">
-  	<time datetime="2017-08-28T05:14:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/28/MongoDB学习-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MongoDB学习(一)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/28/MongoDB学习-一/">MongoDB学习(一)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongoDB</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/23/MongoDB的安装/" class="archive-article-date">
-  	<time datetime="2017-08-23T11:40:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/23/MongoDB的安装/">MongoDB的安装</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/09/jvisualvm远程监控Tomcat/" class="archive-article-date">
-  	<time datetime="2017-08-09T10:02:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/09/jvisualvm远程监控Tomcat/">jvisualvm远程监控Tomcat</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/07/Docker教程/" class="archive-article-date">
-  	<time datetime="2017-08-07T07:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/07/Docker教程/">Docker教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://tomatoyan.github.io/2017/10/02/深入探讨Java字符串的拼接/",
+  owner: 'TomatoYan',
+  repo: 'tomatoyan.github.io',
+  oauth: {
+    client_id: 'f3e96590c10888926eaf',
+    client_secret: '168691b8478313096b02b561395aed5458cd6294',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -412,8 +483,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

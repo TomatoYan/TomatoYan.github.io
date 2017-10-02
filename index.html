@@ -181,6 +181,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深入探讨Java字符串的拼接" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/02/深入探讨Java字符串的拼接/">深入探讨Java字符串的拼接</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/02/深入探讨Java字符串的拼接/" class="archive-article-date">
+  	<time datetime="2017-10-02T07:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。
+</code></pre><h1 id="String中的equals"><a href="#String中的equals" class="headerlink" title="String中的equals"></a>String中的equals</h1><pre><code>public boolean equals(Object anObject) {
+    if (this == anObject) {
+        return true;
+    }
+    if (anObject instanceof String) {
+        String anotherString = (String)anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/10/02/深入探讨Java字符串的拼接/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/02/深入探讨Java字符串的拼接/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MongoDB学习-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -494,83 +593,6 @@ MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自�
 
 
   
-    <article id="post-配置最小oracle实例单元" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/07/配置最小oracle实例单元/">配置最小oracle实例单元</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/07/配置最小oracle实例单元/" class="archive-article-date">
-  	<time datetime="2017-08-07T07:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Oracle开发的关系数据库产品因性能卓越而闻名，许多大型网站也选用了Oracle系统，是世界最好的数据库产品。但Oracle数据库管理软件却十分庞大，在本地安装总会开启一堆服务，同时占用大量的磁盘空间和内存。Oracle提供了Oracle SQL Developer这样的管理工具(下载地址: <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)，我们可以使用这个工具对本地和远程的Oracle数据库进行管理，SQL" target="_blank" rel="external">http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)，我们可以使用这个工具对本地和远程的Oracle数据库进行管理，SQL</a> Developer是Oracle公司出品的一个免费非开源的用以开发数据库应用程序的图形化工具，使用 SQL Developer 可以浏览数据库对象、运行 SQL 语句和脚本、编辑和调试 PL/SQL 语句，但SQL Developer 需要的开发环境要去会比较高(JDK &gt;1.8)，同时，只可以连接到任何Oracle 10g及其后续版本的数据库，此外SQL Developer市场占有率并不高，市场份额基本都被PL/SQL Developer所占有。而PL/SQL Developer 的使用需要有Oracle的一些支持(SQL Developer不需要)，所以我们需要配置最小Oracle实例单元。</p>
-        
-          <a class="article-more-a" href="/2017/08/07/配置最小oracle实例单元/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/07/配置最小oracle实例单元/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -676,23 +698,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jvm</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,7 +710,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
             
             <div class="clearfix"></div>
