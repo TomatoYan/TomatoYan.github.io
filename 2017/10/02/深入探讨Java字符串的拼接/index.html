@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="泛泛而谈">
 <meta property="og:description" content="前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。 String中的equalspublic boolean equals(Object anObject) {     if (this == anObject) {         return true;     }     if (anObject instanceof Stri">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-02T14:23:56.072Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20171003094536602?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-10-03T01:48:16.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入探讨Java字符串的拼接">
 <meta name="twitter:description" content="前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。 String中的equalspublic boolean equals(Object anObject) {     if (this == anObject) {         return true;     }     if (anObject instanceof Stri">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171003094536602?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="泛泛而谈" type="application/atom+xml">
   
@@ -273,7 +275,8 @@ System.out.println(&quot;a&quot;.hashCode()); ==&gt; 97
     String str1 = new String(&quot;hello&quot;);
     String str2 = new String(&quot;hello&quot;);
     System.out.println(str1 == str2);
-</code></pre><p>通过反编译代码，可以发现String中 + 进行拼接，实际上是创建了一个StringBuilder，事实上这个我还真没反编译出来，网上找到的参考资料如下：</p>
+</code></pre><p><img src="http://img.blog.csdn.net/20171003094536602?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>通过反编译代码，可以发现String中 + 进行拼接，实际上是创建了一个StringBuilder，事实上这个我还真没反编译出来，网上找到的参考资料如下：</p>
 <pre><code>String str0 = &quot;a&quot;;
 StringBuilder sb = new StringBuilder();
 sb.append(str0).append(&quot;b&quot;);
@@ -400,6 +403,15 @@ String str1 = sb.toString();
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/10/25/近期读书/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          近期读书
+        
+      </div>
+    </a>
   
   
     <a href="/2017/08/28/MongoDB学习-一/" id="article-nav-older" class="article-nav-link-wrap">
@@ -553,7 +565,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,11 +573,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,15 +589,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
             
             <div class="clearfix"></div>

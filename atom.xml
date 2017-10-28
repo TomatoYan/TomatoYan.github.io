@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tomatoyan.github.io/"/>
-  <updated>2017-10-02T14:23:56.072Z</updated>
+  <updated>2017-10-28T06:37:02.040Z</updated>
   <id>http://tomatoyan.github.io/</id>
   
   <author>
@@ -16,11 +16,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>沉淀</title>
+    <link href="http://tomatoyan.github.io/2017/10/28/%E6%B2%89%E6%B7%80/"/>
+    <id>http://tomatoyan.github.io/2017/10/28/沉淀/</id>
+    <published>2017-10-28T06:37:02.000Z</published>
+    <updated>2017-10-28T06:37:02.040Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java中的四种引用</title>
+    <link href="http://tomatoyan.github.io/2017/10/27/Java%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8/"/>
+    <id>http://tomatoyan.github.io/2017/10/27/Java中的四种引用/</id>
+    <published>2017-10-27T07:51:00.000Z</published>
+    <updated>2017-10-27T07:51:00.433Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>近期读书</title>
+    <link href="http://tomatoyan.github.io/2017/10/25/%E8%BF%91%E6%9C%9F%E8%AF%BB%E4%B9%A6/"/>
+    <id>http://tomatoyan.github.io/2017/10/25/近期读书/</id>
+    <published>2017-10-25T12:05:50.000Z</published>
+    <updated>2017-10-25T12:24:55.911Z</updated>
+    
+    <content type="html"><![CDATA[<p>读书的记录：</p>
+<pre><code>因为好多书值得多次看，但很多时候看了一次就忘记哪些书很好，哪里好，哪里值得多次再看，因此得以记录。
+</code></pre><p>按时间排序：</p>
+<pre><code>1.Java编程思想  自我感觉：或许更适合初学者，看过两次，没什么感觉。基本都是基础的语法知识。
+2.深入
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;读书的记录：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;因为好多书值得多次看，但很多时候看了一次就忘记哪些书很好，哪里好，哪里值得多次再看，因此得以记录。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按时间排序：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.Java编程思想  自我感觉：或许更适合初学者，看
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://tomatoyan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深入探讨Java字符串的拼接</title>
     <link href="http://tomatoyan.github.io/2017/10/02/%E6%B7%B1%E5%85%A5%E6%8E%A2%E8%AE%A8Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%BC%E6%8E%A5/"/>
     <id>http://tomatoyan.github.io/2017/10/02/深入探讨Java字符串的拼接/</id>
     <published>2017-10-02T07:20:10.000Z</published>
-    <updated>2017-10-02T14:23:56.072Z</updated>
+    <updated>2017-10-03T01:48:16.298Z</updated>
     
     <content type="html"><![CDATA[<pre><code>前言：国庆最近跟着小男友在图书馆学习，偶然被他带着看开了Java源码，因而有兴趣想看看String这个是怎么回事。
 </code></pre><h1 id="String中的equals"><a href="#String中的equals" class="headerlink" title="String中的equals"></a>String中的equals</h1><pre><code>public boolean equals(Object anObject) {
@@ -94,7 +150,8 @@ System.out.println(&quot;a&quot;.hashCode()); ==&gt; 97
     String str1 = new String(&quot;hello&quot;);
     String str2 = new String(&quot;hello&quot;);
     System.out.println(str1 == str2);
-</code></pre><p>通过反编译代码，可以发现String中 + 进行拼接，实际上是创建了一个StringBuilder，事实上这个我还真没反编译出来，网上找到的参考资料如下：</p>
+</code></pre><p><img src="http://img.blog.csdn.net/20171003094536602?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>通过反编译代码，可以发现String中 + 进行拼接，实际上是创建了一个StringBuilder，事实上这个我还真没反编译出来，网上找到的参考资料如下：</p>
 <pre><code>String str0 = &quot;a&quot;;
 StringBuilder sb = new StringBuilder();
 sb.append(str0).append(&quot;b&quot;);
