@@ -517,7 +517,7 @@ controlRole   readwrite
     <link href="http://tomatoyan.github.io/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
     <id>http://tomatoyan.github.io/2017/08/07/Docker教程/</id>
     <published>2017-08-07T07:45:12.000Z</published>
-    <updated>2017-10-29T02:32:39.358Z</updated>
+    <updated>2017-10-29T03:09:54.833Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docker包括一个命令行程序、一个后台守护进程，以及一组远程服务。它通过Unix的容器技术解决了常见的软件问题，并简化了安装、运行、发布和删除软件。<br>容器不是虚拟化，Docker容器不使用硬件虚拟化，Docker容器中的程序接口和主机的Linux内核直接打交道，容器的运行与计算机操作系统之间没有额外的中间层。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docker通过一种打包和分发的软件，完成传统容器的封装。这个充当容器分发角色的组件被称为镜像。Docker镜像是一个容器中运行程序的所有文件的捆绑快照。</p>
@@ -549,11 +549,11 @@ docker exec -t        分配一个伪终端
 docker exec -it f4        两个命令一起运行  由于当前容器运行的镜像非常的少，它就可以通过前两个id判断出是哪个镜像，从而进入这个容器
 docker exec 镜像的名称或ID 运行的命令
 docker exec -it f4&lt;名字或id&gt; bash    切换到容器内部
+docker search &lt;镜像名字&gt;     搜索可用的docker镜像
+docker exec -ti &lt;镜像id&gt;  /bin/bash      进入后台容器并提供bash
 docker stop &lt;镜像的id或名字&gt;           停掉当前的镜像
 docker start &lt;镜像的id或名字&gt;           启动镜像
 docker restart      &lt;镜像的id&gt;    重启docker容器
-docker search &lt;镜像名字&gt;     搜索可用的docker镜像
-docker exec -ti &lt;镜像id&gt;  /bin/bash      进入后台容器并提供bash
 docker rmi &lt;镜像名称&gt; &lt;镜像名称&gt;..    删除一个或者多个镜像
 docker rmi -f &lt;镜像名称&gt;        -f = --force    强制删除镜像    
 docker ps -a     查看所有容器(包括stop的容器)
@@ -561,14 +561,42 @@ docker rm &lt;容器id&gt;        删除指定id的容器
 docker stop $(docker ps -q)        停用全部运行中的容器
 docker rm $(docker ps -aq)        删除全部容器
 docker stop $(docker ps -q) &amp; docker rm $(docker ps -aq)     一条命令实现停用并删除容器
+</code></pre><h3 id="更新镜像"><a href="#更新镜像" class="headerlink" title="更新镜像"></a>更新镜像</h3><pre><code>1.更新镜像之前，我们需要使用镜像来创建一个容器。
+2.在运行的容器中使用 apt-get update 命令进行更新，在完成操作之后输入exit命令退出容器。
+3.通过docker commit命令来提交容器副本。
+</code></pre><p><code>docker commit -m=&quot;has update&quot; -a=&quot;tomato&quot; &lt;镜像id&gt; tomato/ubuntu:v2</code></p>
+<pre><code>各个参数说明：
+    -m:提交的描述信息
+    -a:指定镜像作者
+    e218edb10161：容器ID
+    tomato/ubuntu:v2:指定要创建的目标镜像名
 </code></pre><h2 id="Docker的网络"><a href="#Docker的网络" class="headerlink" title="Docker的网络"></a>Docker的网络</h2><pre><code>Bridge 桥接&lt;默认情况&gt;端口映射
 Host 利用主机的IP和端口号
 None 不与外界通信
-</code></pre><h2 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h2><ul>
+</code></pre><h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><ul>
 <li>Dockerfile        用来告诉Docker，我制作镜像的每一个步骤</li>
 <li><p>docker build     执行Dockerfile中所描述的每一件事情</p>
-<pre><code>Dockerfile 内容：from XXX
-docker build .
+<pre><code>使用命令 docker build，从零开始来创建一个镜像，我们需要创建一个Dockerfile文件，其中包含一组命令来告诉Docker如何构建镜像。
+
+FROM    centos:6.7
+MAINTAINER      tomato &quot;XXX@XXX.com&quot;
+RUN     /bin/echo &apos;root:123456&apos; |chpasswd
+RUN     useradd runoob
+RUN     /bin/echo &apos;runoob:123456&apos; |chpasswd
+RUN     /bin/echo -e &quot;LANG=\&quot;en_US.UTF-8\&quot;&quot; &gt;/etc/default/local
+EXPOSE  22
+EXPOSE  80
+CMD     /usr/sbin/sshd -D
+</code></pre><p><br></p>
+<pre><code>每一个指令都会在镜像上创建一个新的层，每一个指令的前缀都必须是大写的。
+第一条指令FROM，指定使用哪个镜像源
+RUN指令告诉Docker在镜像内执行命令，安装了什么
+然后，使用Dockerfile文件，通过docker build命令构建一个镜像。
+$ docker build -t tomato/centos:6.7 .
+
+参数说明：
+-t：指定创建的目标镜像名
+.：Dockerfile文件所在目录，可以指定Dockerfile的绝对路径
 </code></pre></li>
 </ul>
 <p>&lt;!- end -&gt;</p>
