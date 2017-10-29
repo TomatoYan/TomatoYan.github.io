@@ -517,7 +517,7 @@ controlRole   readwrite
     <link href="http://tomatoyan.github.io/2017/08/07/Docker%E6%95%99%E7%A8%8B/"/>
     <id>http://tomatoyan.github.io/2017/08/07/Docker教程/</id>
     <published>2017-08-07T07:45:12.000Z</published>
-    <updated>2017-10-28T15:31:21.066Z</updated>
+    <updated>2017-10-29T02:32:39.358Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docker包括一个命令行程序、一个后台守护进程，以及一组远程服务。它通过Unix的容器技术解决了常见的软件问题，并简化了安装、运行、发布和删除软件。<br>容器不是虚拟化，Docker容器不使用硬件虚拟化，Docker容器中的程序接口和主机的Linux内核直接打交道，容器的运行与计算机操作系统之间没有额外的中间层。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docker通过一种打包和分发的软件，完成传统容器的封装。这个充当容器分发角色的组件被称为镜像。Docker镜像是一个容器中运行程序的所有文件的捆绑快照。</p>
@@ -538,6 +538,9 @@ Docker提供了所谓的抽象，抽象允许你以简化的方式处理复杂�
 <h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2><pre><code>docker search &lt;镜像名字&gt;     搜索可用的docker镜像    
 docker pull &lt;镜像名字&gt;         下载镜像
 docker ps       可以查看当前在这台机器上运行的容器
+    docker ps -a 查看所有镜像信息
+    docker ps -aq 查看所有镜像的id
+    docker ps -q 查看所有镜像的id
 docker run -d &lt;镜像名&gt;       在后台运行容器，并返回容器的id  -d是detach的缩写
 docker run --help        查看docker run的参数
 docker exec        进入容器内部  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
@@ -547,6 +550,7 @@ docker exec -it f4        两个命令一起运行  由于当前容器运行的�
 docker exec 镜像的名称或ID 运行的命令
 docker exec -it f4&lt;名字或id&gt; bash    切换到容器内部
 docker stop &lt;镜像的id或名字&gt;           停掉当前的镜像
+docker start &lt;镜像的id或名字&gt;           启动镜像
 docker restart      &lt;镜像的id&gt;    重启docker容器
 docker search &lt;镜像名字&gt;     搜索可用的docker镜像
 docker exec -ti &lt;镜像id&gt;  /bin/bash      进入后台容器并提供bash

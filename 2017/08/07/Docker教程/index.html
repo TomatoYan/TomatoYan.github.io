@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="泛泛而谈">
 <meta property="og:description" content="什么是Docker&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Docker包括一个命令行程序、一个后台守护进程，以及一组远程服务。它通过Unix的容器技术解决了常见的软件问题，并简化了安装、运行、发布和删除软件。容器不是虚拟化，Docker容器不使用硬件虚拟化，Docker容器中的程序接口和主机的Linux内核直接打交道，容器的运行与计算机操作系">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-28T15:31:21.066Z">
+<meta property="og:updated_time" content="2017-10-29T02:32:39.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker教程">
 <meta name="twitter:description" content="什么是Docker&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Docker包括一个命令行程序、一个后台守护进程，以及一组远程服务。它通过Unix的容器技术解决了常见的软件问题，并简化了安装、运行、发布和删除软件。容器不是虚拟化，Docker容器不使用硬件虚拟化，Docker容器中的程序接口和主机的Linux内核直接打交道，容器的运行与计算机操作系">
@@ -220,6 +220,9 @@ Docker提供了所谓的抽象，抽象允许你以简化的方式处理复杂�
 <h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2><pre><code>docker search &lt;镜像名字&gt;     搜索可用的docker镜像    
 docker pull &lt;镜像名字&gt;         下载镜像
 docker ps       可以查看当前在这台机器上运行的容器
+    docker ps -a 查看所有镜像信息
+    docker ps -aq 查看所有镜像的id
+    docker ps -q 查看所有镜像的id
 docker run -d &lt;镜像名&gt;       在后台运行容器，并返回容器的id  -d是detach的缩写
 docker run --help        查看docker run的参数
 docker exec        进入容器内部  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
@@ -229,6 +232,7 @@ docker exec -it f4        两个命令一起运行  由于当前容器运行的�
 docker exec 镜像的名称或ID 运行的命令
 docker exec -it f4&lt;名字或id&gt; bash    切换到容器内部
 docker stop &lt;镜像的id或名字&gt;           停掉当前的镜像
+docker start &lt;镜像的id或名字&gt;           启动镜像
 docker restart      &lt;镜像的id&gt;    重启docker容器
 docker search &lt;镜像名字&gt;     搜索可用的docker镜像
 docker exec -ti &lt;镜像id&gt;  /bin/bash      进入后台容器并提供bash
