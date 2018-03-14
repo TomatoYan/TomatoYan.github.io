@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tomatoyan.github.io/"/>
-  <updated>2018-01-19T14:23:51.425Z</updated>
+  <updated>2018-01-19T14:23:51.428Z</updated>
   <id>http://tomatoyan.github.io/</id>
   
   <author>
@@ -16,13 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>我曾七次鄙视过我的灵魂</title>
-    <link href="http://tomatoyan.github.io/2018/01/19/%E6%88%91%E6%9B%BE%E4%B8%83%E6%AC%A1%E9%84%99%E8%A7%86%E8%BF%87%E6%88%91%E7%9A%84%E7%81%B5%E9%AD%82/"/>
-    <id>http://tomatoyan.github.io/2018/01/19/我曾七次鄙视过我的灵魂/</id>
-    <published>2018-01-19T13:41:09.000Z</published>
-    <updated>2018-01-19T14:23:51.425Z</updated>
+    <title>面试知识点</title>
+    <link href="http://tomatoyan.github.io/2018/01/19/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://tomatoyan.github.io/2018/01/19/面试知识点/</id>
+    <published>2018-01-19T12:46:02.000Z</published>
+    <updated>2018-01-19T14:23:51.428Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>Seven times have I despised my soul:
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我曾七次鄙视过我的灵魂</title>
+    <link href="http://tomatoyan.github.io/2018/01/01/%E6%88%91%E6%9B%BE%E4%B8%83%E6%AC%A1%E9%84%99%E8%A7%86%E8%BF%87%E6%88%91%E7%9A%84%E7%81%B5%E9%AD%82/"/>
+    <id>http://tomatoyan.github.io/2018/01/01/我曾七次鄙视过我的灵魂/</id>
+    <published>2018-01-01T13:41:09.000Z</published>
+    <updated>2018-01-19T15:30:16.112Z</updated>
+    
+    <content type="html"><![CDATA[<p>我曾七次鄙视过我的灵魂</p>
+<a id="more"></a>
+<pre><code>Seven times have I despised my soul:
 ——Kahlil Gibran
 The first time when I saw her being meek that she might attain height.
 The second time when I saw her limping before the crippled.
@@ -46,27 +62,12 @@ And the seventh time when she sang a song of praise, and deemed it a virtue.
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;Seven times have I despised my soul:
-——Kahlil Gibran
-The first time when I saw her being meek that she might attain height.
-The s
+      &lt;p&gt;我曾七次鄙视过我的灵魂&lt;/p&gt;
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>面试知识点</title>
-    <link href="http://tomatoyan.github.io/2018/01/19/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>http://tomatoyan.github.io/2018/01/19/面试知识点/</id>
-    <published>2018-01-19T12:46:02.000Z</published>
-    <updated>2018-01-19T14:23:51.428Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
+      <category term="随笔" scheme="http://tomatoyan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -642,7 +643,7 @@ The s
     <link href="http://tomatoyan.github.io/2017/10/27/Java%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8/"/>
     <id>http://tomatoyan.github.io/2017/10/27/Java中的四种引用/</id>
     <published>2017-10-27T07:51:00.000Z</published>
-    <updated>2017-12-15T05:24:18.639Z</updated>
+    <updated>2018-01-24T04:25:55.580Z</updated>
     
     <content type="html"><![CDATA[<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><h3 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h3><p>强引用的特点：</p>
 <pre><code>1.强引用可以直接访问目标对象。
@@ -651,7 +652,8 @@ The s
 例如：StringBuilder str = new StringBuilder(&quot;Hello World&quot;);
 str 是强引用。
   ● 将对象的引用显示地置为null：str=null;     // 帮助垃圾收集器回收此对象
-</code></pre><h3 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h3><pre><code>可以通过 java.lang.ref.SoftReference 使用软引用，一个持有软引用的对象，不会被JVM很快回收，JVM会根据当前堆的使用情况来判断何时回收。当堆使用率临近阀值时，才会去回收软引用的对象。只要有足够的内存，软引用便可能在内存中存活相当长的一段时间。
+</code></pre><a id="more"></a>
+<h3 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h3><pre><code>可以通过 java.lang.ref.SoftReference 使用软引用，一个持有软引用的对象，不会被JVM很快回收，JVM会根据当前堆的使用情况来判断何时回收。当堆使用率临近阀值时，才会去回收软引用的对象。只要有足够的内存，软引用便可能在内存中存活相当长的一段时间。
 软引用可以用于实现内存敏感的Cache。
 SoftReference&lt;String&gt; softRef = new SoftReference&lt;String&gt;(&quot;Hello World&quot;);
 </code></pre><h3 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h3><pre><code>在系统GC的时，只要发现弱引用，不管系统堆空间是否足够，都会将对象进行回收。但由于垃圾回收线程的优先级很低，因此，并不一定能很快地发现持有弱引用的对象，在这种情况下，弱引用对象可以存在较长时间。一旦一个弱引用对象被垃圾回收器回收，便会加入到另一个注册引用队列中。WeakReference&lt;String&gt; weakRef = new WeakReference&lt;String&gt;(&quot;HelloWorld&quot;);
@@ -669,7 +671,14 @@ SoftReference&lt;String&gt; softRef = new SoftReference&lt;String&gt;(&quot;Hell
     
     <summary type="html">
     
-      &lt;h2 id=&quot;引用类型&quot;&gt;&lt;a href=&quot;#引用类型&quot; class=&quot;headerlink&quot; title=&quot;引用类型&quot;&gt;&lt;/a&gt;引用类型&lt;/h2&gt;&lt;h3 id=&quot;强引用&quot;&gt;&lt;a href=&quot;#强引用&quot; class=&quot;headerlink&quot; title=&quot;强引用&quot;&gt;&lt;/a&gt;强引
+      &lt;h2 id=&quot;引用类型&quot;&gt;&lt;a href=&quot;#引用类型&quot; class=&quot;headerlink&quot; title=&quot;引用类型&quot;&gt;&lt;/a&gt;引用类型&lt;/h2&gt;&lt;h3 id=&quot;强引用&quot;&gt;&lt;a href=&quot;#强引用&quot; class=&quot;headerlink&quot; title=&quot;强引用&quot;&gt;&lt;/a&gt;强引用&lt;/h3&gt;&lt;p&gt;强引用的特点：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.强引用可以直接访问目标对象。
+2.强引用所指向的对象在任何时候都不会被系统回收。JVM宁愿抛出OutOfMemmory也不会回收强引用所指的对象。
+3.强引用可能会导致内存泄漏。
+例如：StringBuilder str = new StringBuilder(&amp;quot;Hello World&amp;quot;);
+str 是强引用。
+  ● 将对象的引用显示地置为null：str=null;     // 帮助垃圾收集器回收此对象
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
