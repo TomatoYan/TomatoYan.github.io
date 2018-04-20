@@ -181,6 +181,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中的四种引用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/27/Java中的四种引用/">Java中的四种引用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/27/Java中的四种引用/" class="archive-article-date">
+  	<time datetime="2017-10-27T07:51:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><h3 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h3><p>强引用的特点：</p>
+<pre><code>1.强引用可以直接访问目标对象。
+2.强引用所指向的对象在任何时候都不会被系统回收。JVM宁愿抛出OutOfMemmory也不会回收强引用所指的对象。
+3.强引用可能会导致内存泄漏。
+例如：StringBuilder str = new StringBuilder(&quot;Hello World&quot;);
+str 是强引用。
+  ● 将对象的引用显示地置为null：str=null;     // 帮助垃圾收集器回收此对象
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/10/27/Java中的四种引用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/27/Java中的四种引用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-近期读书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -503,83 +576,6 @@ MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自�
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/23/MongoDB的安装/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jvisualvm远程监控Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/09/jvisualvm远程监控Tomcat/">jvisualvm远程监控Tomcat</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/09/jvisualvm远程监控Tomcat/" class="archive-article-date">
-  	<time datetime="2017-08-09T10:02:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="VisualVM：多合一故障处理工具"><a href="#VisualVM：多合一故障处理工具" class="headerlink" title="VisualVM：多合一故障处理工具"></a>VisualVM：多合一故障处理工具</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VisualVM(All-in-One Java Trouble Tool)是到目前为止随JDK发布功能最强大的运行监视和故障处理程序。而且VisualVM不需要被监视的程序基于特殊Agent运行，因此它对实际性能的影响很小，使得它可以直接应用在生产环境中。<br>界面如下：<br><img src="http://img.blog.csdn.net/20170809183644088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaV9hbV90b21hdG8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="界面1"></p>
-        
-          <a class="article-more-a" href="/2017/08/09/jvisualvm远程监控Tomcat/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/09/jvisualvm远程监控Tomcat/">展开全文 >></a>
         </p>
       
 

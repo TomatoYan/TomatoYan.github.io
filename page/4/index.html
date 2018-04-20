@@ -181,6 +181,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Nginx负载均衡的搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/02/Nginx负载均衡的搭建/">Nginx负载均衡的搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/02/Nginx负载均衡的搭建/" class="archive-article-date">
+  	<time datetime="2017-08-02T02:56:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Nginx的简介"><a href="#Nginx的简介" class="headerlink" title="Nginx的简介"></a>Nginx的简介</h2><p>Nginx 是一个很强大的高性能Web和反向代理服务器。</p>
+<h2 id="Nginx优点"><a href="#Nginx优点" class="headerlink" title="Nginx优点"></a>Nginx优点</h2><ol>
+<li>作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。</li>
+<li>Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到7*24不间断运行，即使运行数个月也不需要重新启动. 你还能够不间断服务的情况下进行软件版本的升级 . Nginx 静态处理性能比 Apache 高 3倍以上 ，Apache 对 PHP 支持比较简单，Nginx 需要配合其他后端来使用 ,Apache 的组件比 Nginx 多. </li>
+<li>最核心的区别在于apache是同步多进程模型，一个连接对应一个进程；Nginx是异步的，多个连接（万级别）可以对应一个进程 .</li>
+<li>Nginx的优势是处理静态请求，cpu内存使用率低，apache适合处理动态请求，所以现在一般前端用Nginx作为反向代理抗住压力，apache作为后端处理动态请求。</li>
+</ol>
+        
+          <a class="article-more-a" href="/2017/08/02/Nginx负载均衡的搭建/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/02/Nginx负载均衡的搭建/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
