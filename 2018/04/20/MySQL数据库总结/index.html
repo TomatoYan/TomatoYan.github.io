@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://i.imgur.com/5CgTH7X.png">
 <meta property="og:image" content="https://i.imgur.com/izRF6km.png">
 <meta property="og:image" content="https://i.imgur.com/tYZgfJb.png">
-<meta property="og:updated_time" content="2018-04-20T12:39:55.716Z">
+<meta property="og:updated_time" content="2018-12-10T14:48:58.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据库总结">
 <meta name="twitter:description" content="MySQL 5.7.21免安装版 安装配置1. 下载免安装版压缩包，在指定位置解压 2. 配置环境变量    MYSQL_HOME:D:\mysql-5.7.21-winx64 在系统环境path后面添加 ;%MYSQL_HOME%\bin， 3. 新建my.ini文件放在D:\mysql-5.7.21-winx64文件夹下，将如下代码放入my.ini文件中      [mysql]     #">
@@ -229,8 +229,8 @@
     skip-grant-tables
     # 创建新表时将使用的默认存储引擎
     default-storage-engine=INNODB
-
-4. 管理员运行 cmd
+</code></pre><a id="more"></a>
+<pre><code>4. 管理员运行 cmd
 mysqld --initialize --user=mysql --console
 会出现默认初始化密码
 
@@ -245,8 +245,7 @@ sc delete 服务名
 登陆执行修改密码命令
 set password for root@localhost=&apos;password&apos;;
 如果修改密码失败，请先执行 flush privileges; 在执行修改。
-</code></pre><a id="more"></a>
-<h1 id="MySQL字符编码设置"><a href="#MySQL字符编码设置" class="headerlink" title="MySQL字符编码设置"></a>MySQL字符编码设置</h1><pre><code>在命令窗口录MySQL，输入 \s 会看到MySQL数据库的相关信息
+</code></pre><h1 id="MySQL字符编码设置"><a href="#MySQL字符编码设置" class="headerlink" title="MySQL字符编码设置"></a>MySQL字符编码设置</h1><pre><code>在命令窗口录MySQL，输入 \s 会看到MySQL数据库的相关信息
 </code></pre><p><img src="https://i.imgur.com/5CgTH7X.png" alt=""></p>
 <pre><code>\s 显示mysql的基本信息 服务器端的基本信息
 服务器 客户端(使用cmd登陆的那么客户端就是cmd)
@@ -484,6 +483,15 @@ flush privileges;
   
 <nav id="article-nav">
   
+    <a href="/2018/12/10/金刚不坏/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          金刚不坏
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/01/19/面试知识点/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">面试知识点</div>
@@ -644,15 +652,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,10 +676,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">汇总</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
@@ -681,6 +685,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">汇总</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">专栏</a>
               </li>
             
             <div class="clearfix"></div>
