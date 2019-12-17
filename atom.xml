@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tomatoyan.github.io/"/>
-  <updated>2018-12-10T15:12:10.621Z</updated>
+  <updated>2019-12-17T16:29:35.111Z</updated>
   <id>http://tomatoyan.github.io/</id>
   
   <author>
@@ -16,24 +16,167 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>金刚不坏</title>
-    <link href="http://tomatoyan.github.io/2018/12/10/%E9%87%91%E5%88%9A%E4%B8%8D%E5%9D%8F/"/>
-    <id>http://tomatoyan.github.io/2018/12/10/金刚不坏/</id>
-    <published>2018-12-10T14:52:03.000Z</published>
-    <updated>2018-12-10T15:12:10.621Z</updated>
+    <title>Linux之Shell脚本</title>
+    <link href="http://tomatoyan.github.io/2018/12/17/Linux%E4%B9%8BShell%E8%84%9A%E6%9C%AC/"/>
+    <id>http://tomatoyan.github.io/2018/12/17/Linux之Shell脚本/</id>
+    <published>2018-12-17T13:20:51.000Z</published>
+    <updated>2019-12-17T16:29:35.111Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><pre><code>一不小心辗转到了金融界，当上了一个信息科技人员，说白了，其实就是半程序半业务的人。技艺总会随时间失去，但总得有个地方让自己知道，还有梦去追。
-</code></pre><h2 id="温故知新"><a href="#温故知新" class="headerlink" title="温故知新"></a>温故知新</h2><h2 id="繁华几许"><a href="#繁华几许" class="headerlink" title="繁华几许"></a>繁华几许</h2><h2 id="岁月浅行"><a href="#岁月浅行" class="headerlink" title="岁月浅行"></a>岁月浅行</h2><h2 id="破斧成舟"><a href="#破斧成舟" class="headerlink" title="破斧成舟"></a>破斧成舟</h2><p>&lt;!- end -&gt;<br><!-- 我要这天，再遮不住我眼，要这地，再埋不了我心，要这众生，都明白我意，要那诸佛，都烟消云散！ --></p>
-]]></content>
+    <content type="html"><![CDATA[<p>#Shell基本命令</p>
+<p>##目录相关</p>
+<p>###创建新目录<br>    mkdir [-mp] 目录名称<br>        -m 配置文件权限<br>        -p 递归创建目录<br>        mkdir -m 777 hello<br>        mkdir -p hello/hi/mm</p>
+<p>###删除空目录<br>    rmdir [-p] 目录名称</p>
+<p>###查看文件与目录<br>    ls [-aAdfFhilnrRSt] 目录名称<br>        -a 全部文件<br>        -d 列出目录<br>        -h 将文件容量以人类教易读的方式列出来<br>        -l 列出长数据串，包含文件的属性与权限<br>        -r 将排序结果反向输出<br>        -t 依时间顺序<br>    ls -lrt 按照时间顺序反向输出(最后面显示的是最近的文件)</p>
+<p>###复制、删除与移动：cp、rm、mv</p>
+<p>####复制文件<br>    cp 源文件路径 目的路径<br>    cp 源文件路径1 源文件路径2 源文件路径3 目的路径<br>    cp 文件* 目的路径</p>
+<p>####复制文件夹<br>    cp -r 文件夹源路径 目的路径</p>
+<p>####只有源文件较目标文件新时复制。<br>    cp -u 源文件 目标文件</p>
+<p>####删除文件<br>    rm 文件<br>    强制删除：<br>    rm -rf 文件/文件夹<br>        -f (force)强制删除，从不给出提示<br>        -i (interactive)进行交互式删除<br>        -r,-R (recursive)指示rm将参数中列出的全部目录和子目录均递归地删除</p>
+<p>####移动<br>    mv 源文件/文件夹路径 目的路径</p>
+<p>##查看操作</p>
+<p>###文件内容查阅<br>    cat:由第一行开始显示文件内容<br>        -b 打印出非空白行做行号显示<br>        -n 打印出行号，空白行也会有行号<br>    tac:由最后一行开始显示<br>    nl:显示的时候，顺便输出行号<br>    more:一页一页地显示文件内容<br>        /字符串  向下查询这个”字符串”这个关键字<br>        :f 立刻显示出文件名以及目前显示的行数<br>        q 退出more<br>        空格键 向下翻滚一页<br>        Enter 向下翻滚一行<br>    less:与more相似，但可以往前翻页<br>        空格键 向下翻滚一页<br>        [PageDown] 向下翻滚一页<br>        [PageUp] 向上翻滚一页<br>        /字符串  向下查询这个”字符串”这个关键字<br>        ?字符串  向上查询这个”字符串”这个关键字<br>        n 重复前一个查询<br>        N 反向重复前一个查询<br>        q 退出less<br>    head:只看头几行<br>    tail:只看结尾几行</p>
+<p>###查看文件类型<br>    file ~/.bashrc<br>        ==&gt; ASCII text<br>    file ~<br>        ==&gt; Directory</p>
+<p>###脚本文件名的查询<br>    which(寻找”执行文件”)</p>
+<p>###文件名的查找<br>    whereis(寻找特定文件)<br>        whereis [-bmsu] 文件或目录名<br>            -b 只寻找二进制格式的文件<br>            -s 只找source源文件<br>            -u 查找其他特殊文件<br>    locate<br>        locate [-ir] keyword<br>            -i 忽略大小写的差异<br>            -r 正则表达式的显示方式<br>    find<br>        find [PATH]</p>
+<p>###磁盘与目录的容量<br>    df 列出文件系统的整体磁盘使用量<br>        df [-ahikHTm] 目录或文件名<br>            -a 列出所有的文件系统<br>            -h GB、MB、KB等格式显示<br>        df -h /etc<br>    du 评估文件系统的磁盘使用量<br>        du [-ahskm] 目录或文件名<br>            -a 列出所有的文件与目录容量<br>            -h GB、MB、KB等格式显示<br>            -s 列出总量<br>    查看文件夹大小：du -sh 文件夹名称</p>
+<p>###连接文件：ln<br>    hard link(硬连接或实际连接)<br>        例如：ln /etc/crontab<br>    symbolic link(符号连接)也就是快捷方式<br>        ln [-sf] 源文件 目标文件<br>            -s 如果不加任何参数就是hard link, -s就是symbolic link<br>            -f 如果目标文件存在时，就主动将目标文件直接删除后再创建<br>        例如：ln -s /etc/crontab crontab2</p>
+<p>###磁盘分区、格式化、检验与挂载<br>    fdisk 磁盘分区<br>        fdisk -l 设备名称<br>    mkfs 磁盘格式化<br>        mkfs [-t 文件系统格式] 设备文件名<br>            -t可以接文件系统格式，如ext3,ext2,vfat等</p>
+<p>##压缩与打包</p>
+<p>###压缩<br>    gzip</p>
+<p>###解压<br>    gzip -d</p>
+<p>###打包<br>    tar cvf hello.tar hello</p>
+<p>##文件编辑<br>    vi/vim test.txt<br>    i 进入插入模式<br>    r 进入替换模式</p>
+<p>###在命令行模式的操作说明：<br>    w 将编辑的数据保存在硬盘中<br>    w! 若文件属性为“只读”时，强制写入该文件。不过到底能不能写入该文件，还是跟你对该文件的权限有关。<br>    q 离开 vi 常用<br>    q! 若曾修改文件，又不想保存，q!为强制退出，且不保存。<br>    wq 若为wq!则是强制保存后离开<br>    ZZ 若文件没有改动，直接离开，若文件发送改动，保存后离开<br>    r filename 在编辑的数据中，读入另一个文件的数据，即将“filename”这个文件内容(也可以是本文件)加到光标所在行后面<br>    w filename 将编辑的数据保存成另一个文件<br>    ! Command 暂时离开vim到命令行模式下执行Command的显示结果<br>    set nu 显示行号，设置后，会在每一行的前缀显示该行的行号<br>    set nonu 与set nu相反，为取消行号</p>
+<p>####移动光标的方式：<br>    ctrl+f 屏幕向下移动一页<br>    ctrl+b 屏幕向上移动一页<br>    n n代表数字，输入数字按下空格，光标会向右移动这一行的 n 个字符<br>    0或[home] 移动到这一行的最后面字符处<br>    $或[end] 移动到这一行的最后面字符处<br>    G 移动到这个文件的最后一行<br>    nG n为数字，移动到这个文件的第n行</p>
+<p>####vim的功能<br>    V 字符选择，会将光标经过的地方选择<br>    v 行选择，会将光标经过的行选择<br>    ctrl+v 块选择，可以用长方形的块选择</p>
+<p>####多窗口功能<br>    在命令行模式输入 :sp [filename] 即可<br>    两个文件之间使用 ctrl+w+↑ ctrl+w+↓ 来相互切换</p>
+<p>###选取命令：cut、grep<br>    cut -d ‘分隔符’ -f fields<br>    cut -c 字符范围<br>        将PATH路径使用:分割，选取第5个输出<br>        echo $PATH | cut -d ‘:’ -f 5<br>        echo $PATH | cut -d ‘:’ -f 3,5<br>        输出后12位字符的所有字符串<br>        echo $PATH | cut -c 12-<br>    grep [-acinv] ‘查找字符串’ filename<br>        -a 将binary文件以text文件方式查找数据<br>        -c 计算找到’查找字符串’的次数<br>        -i 忽略大小写的不同<br>        -n 输出行号<br>        -v 反向选择，找出不存在所查找字符串的行<br>        –color=auto 将找到的关键字加颜色显示</p>
+<p>###字符转换命令：tr、col、join、paste、expand<br>    tr [-ds] ‘字符串’<br>        -d 删除信息中的’字符串’<br>        -s 替换掉重复的字符<br>    删除文件中的hi<br>    cat hello | tr -d ‘hi’<br>    文件hello中的大小写替换<br>    cat hello | tr ‘[a-z]’ ‘[A-Z]’</p>
+<p>###文件切割命令 split<br>    split [-bl] file PREFIX<br>        -b 后面可接受切割文件大小<br>        -l 以行数进行切割<br>        PREFIX 作为切割文件的前导文件<br>    切割：<br>        split -b 300k /etc/temp tmp<br>    合并：<br>        cat tmp* &gt;&gt; tempback</p>
+<p>#Shell进阶</p>
+<p>##定时crontab任务<br>    crontab <em> </em> <em> </em> *</p>
+<p>###编辑crontab任务<br>    crontab -e</p>
+<p>###列出crontab任务<br>    crontab -l</p>
+<p>###时间设置<br>    minute(分钟) hour(小时) day-of-month(每天) month-of-year(每月) day-of-week(每周)</p>
+<p>###服务操作<br>    service crond start    //启动服务<br>    service crond stop     //关闭服务<br>    service crond restart  //重启服务<br>    service crond reload   //重新载入配置<br>    service crond status   //查看服务状态</p>
+<p>##管道命令(pipe)</p>
+<p>###将ls输出的内容使用less来读取<br>    ls -al /etc | less        </p>
+<p>##find命令<br>    find  [指定查找目录]  [查找规则]  [查找完后执行的action]</p>
+<pre><code>1. 查找当前路径下的所有文件目录
+find [目录] -type d
+2. find命令之exec
+find [目录] -type d -exec 命令 {} \;
+{} \; 是标准写法表示所有
+3. 场景：有些时候需要对指定路径下的所有目录做指定操作
+将home目录下的目录类型的文件列出来
+find /home -type d -exec ls -l {} \;
+删除home目录下的所有文件
+find /home -type f -exec rm -rf {} \;
+
+-amin n   查找系统中最后N分钟访问的文件
+-atime n  查找系统中最后n*24小时访问的文件
+-cmin n   查找系统中最后N分钟被改变文件状态的文件
+-ctime n  查找系统中最后n*24小时被改变文件状态的文件
+-mmin n   查找系统中最后N分钟被改变文件数据的文件
+-mtime n  查找系统中最后n*24小时被改变文件数据的文件
+
+查找一天前修改过的文件
+find /home -type d -mtime +1;
+</code></pre><p>###sftp -oPort=22 user@IP Address</p>
+<pre><code>put 将本地文件上传到远程路径
+put 本地路径 远程路径
+get 将远程路径下的文件下载到本地
+get 远程路径 本地路径
+lls 显示本地详细信息
+lcd 本地路径
+lpwd 打印本地路径
+put 文件名 把linux当前目录下的文件上传到sftp服务器的当前目录下
+get 文件名 把sftp服务器当前目录下的文件下载到linux当前目录下  
+</code></pre><p>###while : ; do  // 死循环<br>    -eq 等于<br>    -ne 不等于<br>    -le 小于等于<br>    -ge 大于等于<br>    -lt 小于<br>    -gt 大于</p>
+<pre><code>echo $(date +%YMH) 得到当前日期
+echo $(date +%W) 得到一年中的第几周
+echo $(date +%w) 得到本周的第几天
+</code></pre><p>##数据流重导向</p>
+<p>###cat命令创建一个文件的简单流程<br>    cat &gt;&gt; [文件名]</p>
+<p>###变量的截取<br>    从右往左截取0-8位：${subdir:0-8}</p>
+<pre><code>假设有变量 var=http://www.google.com/test.htm
+1、 # 号截取，删除左边字符，保留右边字符。
+echo ${var#*//}
+其中 var 是变量名，# 号是运算符，*// 表示从左边开始删除第一个 // 号及左边的所有字符
+即删除 http://
+结果是 ：www.google.com/test.htm
+2、 ## 号截取，删除左边字符，保留右边字符。
+echo ${var##*/}
+##*/ 表示从左边开始删除最后（最右边）一个 / 号及左边的所有字符
+即删除 http://www.google.com/         
+结果是 test.htm
+3、 %号截取，删除右边字符，保留左边字符
+echo ${var%/*}
+%/* 表示从右边开始，删除第一个 / 号及右边的字符
+结果是：http://www.google.com
+4、 %% 号截取，删除右边字符，保留左边字符
+echo ${var%%/*}
+%%/* 表示从右边开始，删除最后（最左边）一个 / 号及右边的字符
+结果是：http:
+5、 从左边第几个字符开始，及字符的个数
+echo ${var:0:5}
+其中的 0 表示左边第一个字符开始，5 表示字符的总个数。
+结果是：http:
+6、 从左边第几个字符开始，一直到结束。
+echo ${var:7}
+其中的 7 表示左边第8个字符开始，一直到结束。
+结果是 ：www.google.com/test.htm
+7、 从右边第几个字符开始，及字符的个数
+echo ${var:0-8:4}
+其中的 0-8 表示右边算起第八个字符开始，3 表示字符的个数。
+结果是：test
+8、 从右边第几个字符开始，一直到结束。
+echo ${var:0-8}
+表示从右边第八个字符开始，一直到结束。
+结果是：test.htm
+注：（左边的第一个字符是用 0 表示，右边的第一个字符用1表示）
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;一不小心辗转到了金融界，当上了一个信息科技人员，说白了，其实就是半程序半业务的人。技艺总会随时间失去，但总得有个地方
+      &lt;p&gt;#Shell基本命令&lt;/p&gt;
+&lt;p&gt;##目录相关&lt;/p&gt;
+&lt;p&gt;###创建新目录&lt;br&gt;    mkdir [-mp] 目录名称&lt;br&gt;        -m 配置文件权限&lt;br&gt;        -p 递归创建目录&lt;br&gt;        mkdir -m 777 hello&lt;
     
     </summary>
     
     
-      <category term="专栏" scheme="http://tomatoyan.github.io/tags/%E4%B8%93%E6%A0%8F/"/>
+      <category term="Linux;Shell;" scheme="http://tomatoyan.github.io/tags/Linux-Shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java进阶(多并发编程)</title>
+    <link href="http://tomatoyan.github.io/2018/12/16/Java%E8%BF%9B%E9%98%B6/"/>
+    <id>http://tomatoyan.github.io/2018/12/16/Java进阶/</id>
+    <published>2018-12-16T06:32:32.000Z</published>
+    <updated>2019-12-17T16:29:35.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>###前言</p>
+<blockquote>
+<p>说真的，打算写点东西，但一直不知道该写些什么，基础的感觉也没必要重复堆积，就先姑且叫Java进阶好了，或许开头了，也就自然而然会有内容了。</p>
+</blockquote>
+<p>多并发编程</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;###前言&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;说真的，打算写点东西，但一直不知道该写些什么，基础的感觉也没必要重复堆积，就先姑且叫Java进阶好了，或许开头了，也就自然而然会有内容了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;多并发编程&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="Java进阶" scheme="http://tomatoyan.github.io/tags/Java%E8%BF%9B%E9%98%B6/"/>
     
   </entry>
   
@@ -241,28 +384,13 @@ flush privileges;
   </entry>
   
   <entry>
-    <title>面试知识点</title>
-    <link href="http://tomatoyan.github.io/2018/01/19/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>http://tomatoyan.github.io/2018/01/19/面试知识点/</id>
-    <published>2018-01-19T12:46:02.000Z</published>
-    <updated>2018-01-19T14:23:51.428Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>我曾七次鄙视过我的灵魂</title>
     <link href="http://tomatoyan.github.io/2018/01/01/%E6%88%91%E6%9B%BE%E4%B8%83%E6%AC%A1%E9%84%99%E8%A7%86%E8%BF%87%E6%88%91%E7%9A%84%E7%81%B5%E9%AD%82/"/>
     <id>http://tomatoyan.github.io/2018/01/01/我曾七次鄙视过我的灵魂/</id>
     <published>2018-01-01T13:41:09.000Z</published>
-    <updated>2018-01-19T15:30:16.112Z</updated>
+    <updated>2019-12-17T16:27:25.721Z</updated>
     
     <content type="html"><![CDATA[<p>我曾七次鄙视过我的灵魂</p>
-<a id="more"></a>
 <pre><code>Seven times have I despised my soul:
 ——Kahlil Gibran
 The first time when I saw her being meek that she might attain height.
@@ -272,8 +400,8 @@ The fourth time when she committed a wrong, and comforted herself that others al
 The fifth time when she forbore for weakness, and attributed her patience to strength.
 The sixth time when she despised the ugliness of a face, and knew not that it was one of her own masks.
 And the seventh time when she sang a song of praise, and deemed it a virtue.
-
-我曾七次鄙视我的灵魂。
+</code></pre><a id="more"></a>    
+<pre><code>我曾七次鄙视我的灵魂。
 第一次，当它本可进取时，却故作谦卑；
 第二次，当它在空虚时，用爱欲来填充；
 第三次，在困难和容易之间，它选择了容易；
@@ -288,6 +416,16 @@ And the seventh time when she sang a song of praise, and deemed it a virtue.
     <summary type="html">
     
       &lt;p&gt;我曾七次鄙视过我的灵魂&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Seven times have I despised my soul:
+——Kahlil Gibran
+The first time when I saw her being meek that she might attain height.
+The second time when I saw her limping before the crippled.
+The third time when she was given to choose between the hard and the easy, and she chose the easy.
+The fourth time when she committed a wrong, and comforted herself that others also commit wrong.
+The fifth time when she forbore for weakness, and attributed her patience to strength.
+The sixth time when she despised the ugliness of a face, and knew not that it was one of her own masks.
+And the seventh time when she sang a song of praise, and deemed it a virtue.
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
@@ -351,9 +489,9 @@ And the seventh time when she sang a song of praise, and deemed it a virtue.
     <link href="http://tomatoyan.github.io/2017/12/14/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/"/>
     <id>http://tomatoyan.github.io/2017/12/14/知识整理/</id>
     <published>2017-12-14T15:04:00.000Z</published>
-    <updated>2018-12-10T15:32:07.412Z</updated>
+    <updated>2019-12-17T16:24:26.651Z</updated>
     
-    <content type="html"><![CDATA[<div align="center"><img src="https://i.imgur.com/QE1v4kF.jpg" width="480" height="270"></div>
+    <content type="html"><![CDATA[<div align="center"><img src="https://raw.githubusercontent.com/luoyger/images/master/blogImages/xuexiziliaofenxiang.jpg" width="480" height="270"></div>
 
 <p>感谢 <a href="https://luoyger.github.io" target="_blank" rel="external">落叶师兄</a> 的汇总<br>在学校的学习和开发过程中遇到许多问题，在网上有查阅各种资料，收藏在浏览器书签中比较杂乱，因此对这些知识进行整理归类，便于自己浏览和学习，也方便大家根据学习兴趣浏览。整理的知识主要分为以下几类：<br> <a id="more"></a></p>
 <ul>
@@ -852,7 +990,7 @@ And the seventh time when she sang a song of praise, and deemed it a virtue.
     
     <summary type="html">
     
-      &lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://i.imgur.com/QE1v4kF.jpg&quot; width=&quot;480&quot; height=&quot;270&quot;&gt;&lt;/div&gt;
+      &lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/luoyger/images/master/blogImages/xuexiziliaofenxiang.jpg&quot; width=&quot;480&quot; height=&quot;270&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;感谢 &lt;a href=&quot;https://luoyger.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;落叶师兄&lt;/a&gt; 的汇总&lt;br&gt;在学校的学习和开发过程中遇到许多问题，在网上有查阅各种资料，收藏在浏览器书签中比较杂乱，因此对这些知识进行整理归类，便于自己浏览和学习，也方便大家根据学习兴趣浏览。整理的知识主要分为以下几类：&lt;br&gt;&lt;/p&gt;
     
@@ -1536,103 +1674,6 @@ $ docker build -t tomato/centos:6.7 .
     
     
       <category term="数据库" scheme="http://tomatoyan.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>澜澜的天上白云飘</title>
-    <link href="http://tomatoyan.github.io/2017/08/04/%E6%BE%9C%E6%BE%9C%E7%9A%84%E5%A4%A9%E4%B8%8A%E7%99%BD%E4%BA%91%E9%A3%98/"/>
-    <id>http://tomatoyan.github.io/2017/08/04/澜澜的天上白云飘/</id>
-    <published>2017-08-04T11:03:44.000Z</published>
-    <updated>2017-12-10T13:35:51.591Z</updated>
-    
-    <content type="html"><![CDATA[<p>悄悄的告诉你这是一个随笔</p>
-<pre><code>当神已无能为力，那便是魔渡众生。
-</code></pre><p>&lt;!- end -&gt;</p>
-<!-- 
-     1
-    别傻了，他不会回来的。
-    “师兄说他当了最强的剑客便会回来了。”
-    “这你也信，就他那修为，怎么会比得过荒嫖客呢~”
-
-    荒嫖客何许人也？
-    嫖这一字简练而生动，他剑术了得善攻人心，嫖心之术神佛敬畏。
-    荒唐度日，嫖以维生，客以渡人。反而向他说的像个脱世之人，孰不知渡人之术乃是房中秘术，渡人则是以身渡人，以养剑气。
-
-    而这位师兄只先前不过是一个落魄的书生，自以为书可以救人，可以化繁为简，阅己救人，或更是出人头地，娶得娇妻爱妾夜夜笙歌。乱世之中何来盛世之书，自得习武。
-    书生好胜，自不愿武学差矣他人，剑以君子自居，自当学剑，立不世之功。
-    何妨，剑气难养，故人以气养剑，以淫养气，以水养气，无所不养，无所不及。
-
-    立不世之功，自当剑气浩荡，气煞旁荒。
-
-      2
-    “别打了，你剑气未足，我用脚都能。。。”
-    “再来~”
-    “真是浪费。”
-    荒嫖客头也不回，向醉花楼走去。
-    “师兄。。。”
-    颓败之际唯有美酒与美女才能让人向往，不错，女人总是男人的解药。
-
-    而你是伤我的剑。
--->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;悄悄的告诉你这是一个随笔&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;当神已无能为力，那便是魔渡众生。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;lt;!- end -&amp;gt;&lt;/p&gt;
-&lt;!-- 
-     1
-    别傻了，他不会回来的。
-    “师兄说他当了最强的剑客便会回来了。”
-  
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://tomatoyan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近生活</title>
-    <link href="http://tomatoyan.github.io/2017/08/04/%E6%9C%80%E8%BF%91%E7%94%9F%E6%B4%BB/"/>
-    <id>http://tomatoyan.github.io/2017/08/04/最近生活/</id>
-    <published>2017-08-04T10:22:48.000Z</published>
-    <updated>2017-12-10T13:35:20.430Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="最近计划"><a href="#最近计划" class="headerlink" title="最近计划"></a>最近计划</h2><pre><code>其实朕只是个淫荡的狗皇帝，也不在乎什么狗命，也不懂什么喜欢朕的一生都在宫闱之内，头顶只有一方天地。
-而天地都没有人心。
-
-  是夜，群魔并举，王道崩倾。
-    她太脏了。
-        比朕的万里江山都脏。
-                            ---朱炫
-</code></pre><a id="more"></a>
-<p>最近在想着未来，想着以后的生活，我该何去何从，未来又该是什么计划呢？</p>
-<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><pre><code>1. 学习Spring系列，SpringBoot SpringMVC SpringCloud
-2. 学习Java数据结构 算法 Linux
-</code></pre><h2 id="具体目标"><a href="#具体目标" class="headerlink" title="具体目标"></a>具体目标</h2><pre><code>1. 每天要写计划，要学习多少，定量完成。
-2. 编程题训练 每天 计算机网络 数据库 数据结构 等的练习
-3. 每天40道笔试题，编程语言、计算机网络、数据库、操作系统各10道
-</code></pre><p>&lt;!- end -&gt;</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;最近计划&quot;&gt;&lt;a href=&quot;#最近计划&quot; class=&quot;headerlink&quot; title=&quot;最近计划&quot;&gt;&lt;/a&gt;最近计划&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;其实朕只是个淫荡的狗皇帝，也不在乎什么狗命，也不懂什么喜欢朕的一生都在宫闱之内，头顶只有一方天地。
-而天地都没有人心。
-
-  是夜，群魔并举，王道崩倾。
-    她太脏了。
-        比朕的万里江山都脏。
-                            ---朱炫
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://tomatoyan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

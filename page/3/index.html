@@ -497,55 +497,36 @@
 
 
   
-    <article id="post-澜澜的天上白云飘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Nginx负载均衡的搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/04/澜澜的天上白云飘/">澜澜的天上白云飘</a>
+      <a class="article-title" href="/2017/08/02/Nginx负载均衡的搭建/">Nginx负载均衡的搭建</a>
     </h1>
   
 
         
-        <a href="/2017/08/04/澜澜的天上白云飘/" class="archive-article-date">
-  	<time datetime="2017-08-04T11:03:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-04</time>
+        <a href="/2017/08/02/Nginx负载均衡的搭建/" class="archive-article-date">
+  	<time datetime="2017-08-02T02:56:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>悄悄的告诉你这是一个随笔</p>
-<pre><code>当神已无能为力，那便是魔渡众生。
-</code></pre><p>&lt;!- end -&gt;</p>
-<!-- 
-     1
-    别傻了，他不会回来的。
-    “师兄说他当了最强的剑客便会回来了。”
-    “这你也信，就他那修为，怎么会比得过荒嫖客呢~”
-
-    荒嫖客何许人也？
-    嫖这一字简练而生动，他剑术了得善攻人心，嫖心之术神佛敬畏。
-    荒唐度日，嫖以维生，客以渡人。反而向他说的像个脱世之人，孰不知渡人之术乃是房中秘术，渡人则是以身渡人，以养剑气。
-
-    而这位师兄只先前不过是一个落魄的书生，自以为书可以救人，可以化繁为简，阅己救人，或更是出人头地，娶得娇妻爱妾夜夜笙歌。乱世之中何来盛世之书，自得习武。
-    书生好胜，自不愿武学差矣他人，剑以君子自居，自当学剑，立不世之功。
-    何妨，剑气难养，故人以气养剑，以淫养气，以水养气，无所不养，无所不及。
-
-    立不世之功，自当剑气浩荡，气煞旁荒。
-
-      2
-    “别打了，你剑气未足，我用脚都能。。。”
-    “再来~”
-    “真是浪费。”
-    荒嫖客头也不回，向醉花楼走去。
-    “师兄。。。”
-    颓败之际唯有美酒与美女才能让人向往，不错，女人总是男人的解药。
-
-    而你是伤我的剑。
--->
+        <h2 id="Nginx的简介"><a href="#Nginx的简介" class="headerlink" title="Nginx的简介"></a>Nginx的简介</h2><p>Nginx 是一个很强大的高性能Web和反向代理服务器。</p>
+<h2 id="Nginx优点"><a href="#Nginx优点" class="headerlink" title="Nginx优点"></a>Nginx优点</h2><ol>
+<li>作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。在高连接并发的情况下，Nginx是Apache服务器不错的替代品，能够支持高达 50000 个并发连接数的响应。</li>
+<li>Nginx 配置简洁, Apache 复杂 ，Nginx 启动特别容易, 并且几乎可以做到7*24不间断运行，即使运行数个月也不需要重新启动. 你还能够不间断服务的情况下进行软件版本的升级 . Nginx 静态处理性能比 Apache 高 3倍以上 ，Apache 对 PHP 支持比较简单，Nginx 需要配合其他后端来使用 ,Apache 的组件比 Nginx 多. </li>
+<li>最核心的区别在于apache是同步多进程模型，一个连接对应一个进程；Nginx是异步的，多个连接（万级别）可以对应一个进程 .</li>
+<li>Nginx的优势是处理静态请求，cpu内存使用率低，apache适合处理动态请求，所以现在一般前端用Nginx作为反向代理抗住压力，apache作为后端处理动态请求。</li>
+</ol>
+        
+          <a class="article-more-a" href="/2017/08/02/Nginx负载均衡的搭建/#more">more >></a>
+        
       
 
       
@@ -558,7 +539,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
         		</li>
       		
 		</ul>
@@ -569,7 +550,7 @@
       
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/04/澜澜的天上白云飘/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/08/02/Nginx负载均衡的搭建/">展开全文 >></a>
         </p>
       
 
@@ -613,7 +594,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Tomato Yan
+    		&copy; 2019 Tomato Yan
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -704,7 +685,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux;Shell;</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java进阶</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,7 +697,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,19 +705,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jvm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,19 +721,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">汇总</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">专栏</a>
+                <a href="javascript:void(0)" class="js-tag color4">jvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
             
             <div class="clearfix"></div>
